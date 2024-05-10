@@ -6,6 +6,9 @@ type TechnologyImage = {
   width: number;
   alt: string;
 };
+const PDFViewer = () => {
+  return <div></div>;
+};
 export default function Home() {
   return (
     <main className="relative max-w-2xl m-auto my-16 flex flex-col gap-12 px-6 ">
@@ -63,12 +66,17 @@ export default function Home() {
             )
           )}
         </div>
-        <h2 className="font-light pt-4">Projects</h2>
+        <h2 className="font-light pt-4">Experience</h2>
         <p className="font-normal text-base pt-2 text-justify">
-          I´ve been working on different projects. Some of them are personal
-          projects, and others are projects that I´ve been working on with other
-          developers.
+          Here´s my CV if you want to know more about my experience.
         </p>
+        <iframe
+          src="https://drive.google.com/file/d/1rJdXSzcWQmY1rVAdPye_fTvXCFO1AMwH/preview"
+          width="640"
+          height="480"
+          allow="autoplay"
+          className="pt-2"
+        ></iframe>
       </div>
     </main>
   );
