@@ -70,13 +70,13 @@ export default function Home() {
         <p className="font-normal text-base pt-2 text-justify">
           Here´s my CV if you want to know more about my experience.
         </p>
-        <iframe
-          src="https://drive.google.com/file/d/1rJdXSzcWQmY1rVAdPye_fTvXCFO1AMwH/preview"
-          width="640"
-          height="480"
-          allow="autoplay"
-          className="pt-2"
-        ></iframe>
+        <div className="aspect-w-16 aspect-h-9">
+          <iframe
+            src="https://drive.google.com/file/d/1rJdXSzcWQmY1rVAdPye_fTvXCFO1AMwH/preview"
+            allow="autoplay"
+            className="pt-2 w-full h-full"
+          ></iframe>
+        </div>
       </div>
     </main>
   );
