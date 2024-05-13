@@ -27,6 +27,24 @@ export default async function project({ params }: { params: { id: number } }) {
           <p className="font-normal text-base pt-2 text-justify">
             {project.long_description}
           </p>
+          <div className="flex items-center pt-4">
+            <h2 className="font-medium  text-markup">Deployment</h2>
+            <div className="flex-1 h-px bg-black ml-4 rounded-full"></div>
+          </div>
+          <p className="font-normal text-base pt-2 text-justify">
+            {project.deployment}
+          </p>
+          <div className="font-normal text-base pt-2 text-justify flex flex-wrap md:space-x-4 lg:space-x-4 sm:space-x-4 text-wrap">
+            {project.links.map((projectLink, index) => (
+              <Link
+                href={projectLink.link}
+                className="underline not-italic w-full sm:w-auto"
+                key={index}
+              >
+                {projectLink.type}
+              </Link>
+            ))}
+          </div>
           {project.images[1].width < 1400 ? (
             <div className="grid grid-flow-row justify-center p-4">
               {project.images
@@ -58,25 +76,6 @@ export default async function project({ params }: { params: { id: number } }) {
                 ))}
             </div>
           )}
-
-          <div className="flex items-center pt-4">
-            <h2 className="font-medium  text-markup">Deployment</h2>
-            <div className="flex-1 h-px bg-black ml-4 rounded-full"></div>
-          </div>
-          <p className="font-normal text-base pt-2 text-justify">
-            {project.deployment}
-          </p>
-          <div className="font-normal text-base pt-2 text-justify flex flex-wrap md:space-x-4 lg:space-x-4 sm:space-x-4 text-wrap">
-            {project.links.map((projectLink, index) => (
-              <Link
-                href={projectLink.link}
-                className="underline not-italic w-full sm:w-auto"
-                key={index}
-              >
-                {projectLink.type}
-              </Link>
-            ))}
-          </div>
 
           <div className="text-right">
             <Link
