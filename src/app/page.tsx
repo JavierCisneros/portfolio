@@ -37,7 +37,7 @@ export default function Home() {
         </div>
         <div>
           <div className="flex items-center pt-4">
-            <h2 className="font-medium  text-markup">Technologies</h2>
+            <h2 className="font-medium  text-markup">Stack</h2>
             <div className="flex-1 h-px bg-black ml-4 rounded-full"></div>
           </div>
           <p className="font-normal text-base pt-2 text-justify">
