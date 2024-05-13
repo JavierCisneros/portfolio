@@ -94,9 +94,9 @@ export default function Home() {
         </p>
         <iframe
           src="https://drive.google.com/file/d/1k8V0nhU2XPy3jxMKiMLOKIgfYNDIhPmi/preview"
-          width="640"
-          height="480"
           allow="autoplay"
+          height={250}
+          className="pt-2 w-full"
         ></iframe>
       </div>
     </main>
