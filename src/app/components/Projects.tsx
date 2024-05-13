@@ -46,7 +46,7 @@ export default function Projects(props: { numberOfElements: number }) {
               >
                 {project.title}
               </Link>
-              <p className="text-sm line-clamp-2">{project.description}</p>
+              <p className="text-sm">{project.description}</p>
               <div className="text-right">
                 <Link
                   href={"view-projects/" + index}
