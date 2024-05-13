@@ -93,10 +93,10 @@ export default function Home() {
           Here´s my CV if you want to know more about my experience.
         </p>
         <iframe
-          src="https://drive.google.com/file/d/1PYWG82yy2WGGP5nQpT3m2rEq-9S70GGz/preview"
+          src="https://drive.google.com/file/d/1k8V0nhU2XPy3jxMKiMLOKIgfYNDIhPmi/preview"
+          width="640"
+          height="480"
           allow="autoplay"
-          height={250}
-          className="pt-2 w-full"
         ></iframe>
       </div>
     </main>
