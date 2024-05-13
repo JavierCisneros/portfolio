@@ -16,8 +16,8 @@ export default function Home() {
           I´m a Front-End software developer from Guadalajara, Jalisco. I
           started studying software development when I was 16 years old in high
           school and graduated as a junior software engineer. After that, I
-          started studying a bachelor degree in software development, and
-          graduated in June 2024.{" "}
+          started studying a bachelor degree in software development, and will
+          graduate in June 2024.{" "}
         </p>
         <p className="font-normal text-base pt-2 text-justify ali">
           I´m passionate about learning and I´m always up to new challenges, I
