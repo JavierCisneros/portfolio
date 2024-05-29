@@ -5,10 +5,14 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Javier Cisneros",
-  description: "Javier Cisneros Portfolio",
+  openGraph: {
+    title: "Javier Cisneros Web portfolio",
+    description:
+      "Hi, this is Javier Cisneros web portfolio, here you can find some of the projects that I´ve been working on.",
+    images: [{ url: "/images/javier_cisneros.jpg" }],
+    type: "website",
+  },
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
