@@ -4,34 +4,17 @@ import { TECHNOLOGIES_CONSTANTS } from "./technologies-constants";
 import Link from "next/link";
 import Projects from "./components/Projects";
 import type { Images } from "./components/Projects";
-import { Github, Linkedin, Mail, Moon, Sun } from "lucide-react";
-import { useEffect, useState } from "react";
+import { Github, Linkedin, Mail } from "lucide-react";
+import dynamic from "next/dynamic";
+
+const DarkMode = dynamic(() => import("./components/DarkMode"), { ssr: false });
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(
-    localStorage.getItem("dark-mode") === "enabled"
-  );
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [darkMode]);
-
-  const handleDarkMode = () => {
-    const newDarkMode = !darkMode;
-    setDarkMode(newDarkMode);
-    localStorage.setItem("dark-mode", newDarkMode ? "enabled" : "disabled");
-  };
   return (
     <main className="relative text-black max-w-2xl m-auto my-16 flex flex-col gap-12 px-6 dark:text-slate-300 dark:bg-background antialiased bg-white ">
       <div className="scroll-m-20 text-2xl font-bold tracking-tight">
         <div className="flex wrap ">
-          <h1 className="font-bold ">Javier Cisneros</h1>{" "}
-          <button onClick={handleDarkMode} className="ml-auto">
-            {darkMode ? <Moon /> : <Sun />}
-          </button>
+          <h1 className="font-bold ">Javier Cisneros</h1> <DarkMode />
         </div>
         <h2 className="font-medium text-markup">
           Software Development Engineer
@@ -122,7 +105,7 @@ export default function Home() {
           Here´s my CV if you want to know more about my experience.
         </p>
         <iframe
-          src="https://drive.google.com/file/d/1xcP3cjOI8BYx-SJlmNN03w1KQwjdHyHC/preview"
+          src="https://drive.google.com/file/d/1r3OrgHhMYXiUZqCoqezykf7tdvV2Ib_C/preview"
           allow="autoplay"
           height={250}
           className="pt-2 w-full"
