@@ -1,36 +1,25 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { getCookie, setCookie } from "cookies-next";
 import { Moon, Sun } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function DarkMode() {
-  const [darkMode, setDarkMode] = useState<boolean>(false);
+  const [darkMode, setDarkMode] = useState<boolean>(
+    typeof window !== "undefined" && localStorage.getItem("darkMode") === "true"
+  );
 
   useEffect(() => {
-    const themeCookie = getCookie("theme");
-    const isDarkMode = themeCookie === "true";
-    setDarkMode(isDarkMode);
-
-    if (isDarkMode) {
+    if (darkMode) {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
     }
-  }, []);
+    localStorage.setItem("darkMode", darkMode.toString());
+  }, [darkMode]);
 
   const handleDarkMode = () => {
-    const newTheme = !darkMode;
-    setDarkMode(newTheme);
-    setCookie("theme", newTheme.toString());
-
-    if (newTheme) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
+    setDarkMode((prevDarkMode) => !prevDarkMode);
   };
-
   return (
     <button onClick={handleDarkMode} className="ml-auto">
       {darkMode ? <Sun /> : <Moon />}
