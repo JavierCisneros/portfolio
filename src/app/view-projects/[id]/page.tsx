@@ -1,7 +1,7 @@
 import { PROJECT_CONSTANTS } from "@/app/projects-constants";
 import Image from "next/image";
 import Link from "next/link";
-import ReturnButton from "../../components/ReturnButton";
+import ReturnButton from "../../../components/ReturnButton";
 export default async function project({ params }: { params: { id: number } }) {
   const { id } = params;
   const project = PROJECT_CONSTANTS[id as keyof typeof PROJECT_CONSTANTS];

@@ -1,14 +1,14 @@
-"use client";
 import Image from "next/image";
 import { TECHNOLOGIES_CONSTANTS } from "./technologies-constants";
 import Link from "next/link";
-import Projects from "./components/Projects";
-import type { Images } from "./components/Projects";
+import Projects from "../components/Projects";
+import type { Images } from "../components/Projects";
 import { Github, Linkedin, Mail } from "lucide-react";
 import dynamic from "next/dynamic";
 
-const DarkMode = dynamic(() => import("./components/DarkMode"), { ssr: false });
-
+const DarkMode = dynamic(() => import("../components/DarkMode"), {
+  ssr: false,
+});
 export default function Home() {
   return (
     <main className="relative text-black max-w-2xl m-auto my-16 flex flex-col gap-12 px-6 dark:text-slate-300 dark:bg-background antialiased bg-white ">

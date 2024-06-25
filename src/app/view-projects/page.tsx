@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Projects from "../components/Projects";
+import Projects from "../../components/Projects";
 
 export default function projectsPage() {
   return (
