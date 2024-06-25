@@ -29,7 +29,10 @@ export default function Projects(props: { numberOfElements: number }) {
       {Object.values(PROJECT_CONSTANTS)
         .slice(0, numberOfElements)
         .map((project: Project, index: number) => (
-          <div className="flex flex-col w-full overflow-hidden" key={index}>
+          <article
+            className="flex flex-col w-full overflow-hidden rounded-lg shadow-lg bg-background border border-gray-400 hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
+            key={index}
+          >
             <Image
               src={project.images[0].src}
               alt={project.images[0].alt}
@@ -38,7 +41,7 @@ export default function Projects(props: { numberOfElements: number }) {
               className="object-cover object-center h-48"
             />
 
-            <div className="flex flex-col justify-between px-4 bg-white border border-gray-400 h-full">
+            <div className="flex flex-col justify-between px-4 dark:bg-background  bg-white border border-gray-600 h-full ">
               <Link
                 href={project.links[0].link}
                 className="block text-2xl font-black leading-tight hover:underline hover:text-markup pt-4 "
@@ -47,16 +50,16 @@ export default function Projects(props: { numberOfElements: number }) {
                 {project.title}
               </Link>
               <p className="text-sm">{project.description}</p>
-              <div className="text-right">
+              <h2 className="text-right">
                 <Link
                   href={"view-projects/" + index}
-                  className="inline-block pb-1 mt-2 text-base font-medium text-markup uppercase border-b border-transparent hover:border-markup"
+                  className="inline-block mt-2 text-base font-medium text-markup uppercase border-b border-transparent hover:border-markup mb-2"
                 >
                   Read More
                 </Link>
-              </div>
+              </h2>
             </div>
-          </div>
+          </article>
         ))}
     </div>
   );

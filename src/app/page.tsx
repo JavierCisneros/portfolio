@@ -1,14 +1,38 @@
+"use client";
 import Image from "next/image";
 import { TECHNOLOGIES_CONSTANTS } from "./technologies-constants";
 import Link from "next/link";
 import Projects from "./components/Projects";
 import type { Images } from "./components/Projects";
+import { Github, Linkedin, Mail, Moon, Sun } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [darkMode, setDarkMode] = useState(
+    localStorage.getItem("dark-mode") === "enabled"
+  );
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [darkMode]);
+
+  const handleDarkMode = () => {
+    const newDarkMode = !darkMode;
+    setDarkMode(newDarkMode);
+    localStorage.setItem("dark-mode", newDarkMode ? "enabled" : "disabled");
+  };
   return (
-    <main className="relative max-w-2xl m-auto my-16 flex flex-col gap-12 px-6 ">
+    <main className="relative text-black max-w-2xl m-auto my-16 flex flex-col gap-12 px-6 dark:text-slate-300 dark:bg-background antialiased bg-white ">
       <div className="scroll-m-20 text-2xl font-bold tracking-tight">
-        <h1 className="font-bold">Javier Cisneros</h1>
+        <div className="flex wrap ">
+          <h1 className="font-bold ">Javier Cisneros</h1>{" "}
+          <button onClick={handleDarkMode} className="ml-auto">
+            {darkMode ? <Moon /> : <Sun />}
+          </button>
+        </div>
         <h2 className="font-medium text-markup">
           Software Development Engineer
         </h2>
@@ -16,29 +40,35 @@ export default function Home() {
           I´m a Front-End software developer from Guadalajara, Jalisco. I
           started studying software development when I was 16 years old in high
           school and graduated as a junior software engineer. After that, I
-          started studying a bachelor degree in software development, and I will
-          graduate in June 2024.{" "}
+          started studying a bachelor degree in software development, and
+          graduated in June 2024.{" "}
         </p>
-        <p className="font-normal text-base pt-2 text-justify ali">
+        <p className="font-normal text-base pt-2 text-justify">
           I´m passionate about learning and I´m always up to new challenges, I
           want to become a better developer, and I´m always looking for new
           opportunities to grow as a professional.{" "}
         </p>
-        <div className="font-normal text-base pt-2 text-justify flex flex-wrap md:space-x-4 lg:space-x-4 sm:space-x-4 text-wrap">
-          <address className="underline not-italic w-full sm:w-auto">
-            <a href="mailto:'fjca185@gmail.com'">fjca185@gmail.com</a>
+        <div className="flex flex-no-wrap justify-center space-x-8">
+          <address className="m-2 underline not-italic w-auto sm:w-10 hover:shadow-xl transition duration-300 ease-in-out transform hover:translate-y-1 hover:scale-105 ">
+            <a href="mailto:'fjca185@gmail.com'">
+              <Mail size={32} />
+            </a>
           </address>
-          <p className="underline w-full sm:w-auto">
-            <a href="https://linkedin.com/in/javiercisnerosavila">Linkedln</a>
+          <p className="m-2 underline w-auto sm:w-10 hover:shadow-xl transition duration-300 ease-in-out transform hover:translate-y-1 hover:scale-105">
+            <a href="https://linkedin.com/in/javiercisnerosavila">
+              <Linkedin size={32} />
+            </a>
           </p>
-          <p className="underline w-full sm:w-auto">
-            <a href="https://github.com/JavierCisneros">Github</a>
+          <p className="m-2 underline w-auto sm:w-10 hover:shadow-xl transition duration-300 ease-in-out transform hover:translate-y-1 hover:scale-105">
+            <a href="https://github.com/JavierCisneros">
+              <Github size={32} />
+            </a>
           </p>
         </div>
         <div>
           <div className="flex items-center pt-4">
             <h2 className="font-medium  text-markup">Stack</h2>
-            <div className="flex-1 h-px bg-black ml-4 rounded-full"></div>
+            <div className="flex-1 h-px dark:bg-white ml-4 rounded-full bg-black"></div>
           </div>
           <p className="font-normal text-base pt-2 text-justify">
             Now I´m focusing on web development. I´m learning new technologies
@@ -67,7 +97,7 @@ export default function Home() {
         <div>
           <div className="flex items-center pt-4">
             <h2 className="font-medium  text-markup">Projects</h2>
-            <div className="flex-1 h-px bg-black ml-4 rounded-full"></div>
+            <div className="flex-1 h-px dark:bg-white ml-4 rounded-full bg-black"></div>
           </div>
           <p className="font-normal text-base pt-2 text-justify">
             I´ve been working on different projects. Some of them are personal
@@ -84,10 +114,9 @@ export default function Home() {
             </Link>
           </div>
         </div>
-
         <div className="flex items-center pt-4">
           <h2 className="font-medium  text-markup">Experience</h2>
-          <div className="flex-1 h-px bg-black ml-4 rounded-full"></div>
+          <div className="flex-1 h-px dark:bg-white ml-4 rounded-full bg-black"></div>
         </div>
         <p className="font-normal text-base pt-2 text-justify">
           Here´s my CV if you want to know more about my experience.

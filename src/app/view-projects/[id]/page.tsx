@@ -1,16 +1,17 @@
 import { PROJECT_CONSTANTS } from "@/app/projects-constants";
 import Image from "next/image";
 import Link from "next/link";
+import ReturnButton from "../../components/ReturnButton";
 export default async function project({ params }: { params: { id: number } }) {
   const { id } = params;
   const project = PROJECT_CONSTANTS[id as keyof typeof PROJECT_CONSTANTS];
   return (
-    <main className="relative max-w-2xl m-auto my-16 flex flex-col gap-12 px-6 ">
+    <main className="relative max-w-2xl m-auto my-16 flex flex-col gap-12 px-6 dark:text-slate-300 text-black">
       <div className="scroll-m-20 text-2xl font-bold tracking-tight">
         <div>
           <div className="flex items-center pt-4">
             <h2 className="font-medium  text-markup">{project.title}</h2>
-            <div className="flex-1 h-px bg-black ml-4 rounded-full"></div>
+            <div className="flex-1 h-px dark:bg-white ml-4 rounded-full bg-black"></div>
           </div>
           <p className="font-normal text-base pt-2 text-justify">
             {project.learning}
@@ -29,7 +30,7 @@ export default async function project({ params }: { params: { id: number } }) {
           </p>
           <div className="flex items-center pt-4">
             <h2 className="font-medium  text-markup">Deployment</h2>
-            <div className="flex-1 h-px bg-black ml-4 rounded-full"></div>
+            <div className="flex-1 h-px dark:bg-white ml-4 rounded-full bg-black"></div>
           </div>
           <p className="font-normal text-base pt-2 text-justify">
             {project.deployment}
@@ -78,12 +79,7 @@ export default async function project({ params }: { params: { id: number } }) {
           )}
 
           <div className="text-right">
-            <Link
-              href="/view-projects"
-              className="pb-1 mt-2 text-base font-medium text-markup uppercase border-b border-transparent hover:border-markup text-right"
-            >
-              Go Back{" "}
-            </Link>
+            <ReturnButton />
           </div>
         </div>
       </div>
