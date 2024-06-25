@@ -3,9 +3,7 @@ import { TECHNOLOGIES_CONSTANTS } from "./technologies-constants";
 import Link from "next/link";
 import Projects from "../components/Projects";
 import type { Images } from "../components/Projects";
-import { Github, Linkedin, Mail } from "lucide-react";
 import dynamic from "next/dynamic";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const DarkMode = dynamic(() => import("../components/DarkMode"), {
   ssr: false,
 });
