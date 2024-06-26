@@ -1,28 +1,30 @@
 "use client";
 
 import { Moon, Sun } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
+import { useEffect } from "react";
 
 export default function DarkMode() {
-  const [darkMode, setDarkMode] = useState<boolean>(
-    typeof window !== "undefined" && localStorage.getItem("darkMode") === "true"
-  );
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
-    if (darkMode) {
+    if (theme === "dark") {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
     }
-    localStorage.setItem("darkMode", darkMode.toString());
-  }, [darkMode]);
+  }, [theme]);
 
   const handleDarkMode = () => {
-    setDarkMode((prevDarkMode) => !prevDarkMode);
+    if (theme === "dark") {
+      return setTheme("light");
+    }
+    return setTheme("dark");
   };
+
   return (
     <button onClick={handleDarkMode} className="ml-auto">
-      {darkMode ? <Sun /> : <Moon />}
+      {theme === "dark" ? <Sun /> : <Moon />}
     </button>
   );
 }
