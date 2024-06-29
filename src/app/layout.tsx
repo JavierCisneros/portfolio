@@ -26,7 +26,7 @@ export default function RootLayout({
       <body
         className={`${inter.className} bg-white dark:bg-background antialiased `}
       >
-        <ThemeProvider>
+        <ThemeProvider attribute="class" enableSystem disableTransitionOnChange>
           {" "}
           {children}
           <Analytics />
