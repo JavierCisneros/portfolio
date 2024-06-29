@@ -7,14 +7,6 @@ import { useEffect } from "react";
 export default function DarkMode() {
   const { theme, setTheme } = useTheme();
 
-  useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [theme]);
-
   const handleDarkMode = () => {
     if (theme === "dark") {
       return setTheme("light");
