@@ -2,7 +2,6 @@
 
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-import { useEffect } from "react";
 
 export default function DarkMode() {
   const { theme, setTheme } = useTheme();
@@ -16,7 +15,7 @@ export default function DarkMode() {
 
   return (
     <button onClick={handleDarkMode} className="ml-auto">
-      {theme === "dark" ? <Sun /> : <Moon />}
+      {theme === "light" ? <Moon /> : <Sun />}
     </button>
   );
 }
