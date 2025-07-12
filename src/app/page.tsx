@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { TECHNOLOGIES_CONSTANTS } from "./technologies-constants";
 import Link from "next/link";
@@ -29,7 +31,7 @@ export default function Home() {
           want to become a better developer, and I´m always looking for new
           opportunities to grow as a professional.{" "}
         </p>
-        <div className="flex flex-no-wrap justify-center space-x-8">
+        <div className="flex flex-nowrap justify-center space-x-8">
           <address className="m-2 underline not-italic w-auto sm:w-10 hover:shadow-xl transition duration-300 ease-in-out transform hover:translate-y-1 hover:scale-105 ">
             <a href="mailto:'fjca185@gmail.com'">
               <svg
