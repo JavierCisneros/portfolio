@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { PROJECT_CONSTANTS } from "../../projects-constants";
+import { PROJECT_CONSTANTS_ES } from "../../../projects-constants-es";
 import { Metadata } from "next";
-import ImageGallery from "../../../components/ImageGallery";
+import ImageGallery from "../../../../components/ImageGallery";
 
 interface ProjectPageProps {
   params: Promise<{
@@ -14,7 +14,7 @@ export async function generateMetadata({
 }: ProjectPageProps): Promise<Metadata> {
   const { id } = await params;
   const project =
-    PROJECT_CONSTANTS[parseInt(id) as keyof typeof PROJECT_CONSTANTS];
+    PROJECT_CONSTANTS_ES[parseInt(id) as keyof typeof PROJECT_CONSTANTS_ES];
 
   return {
     title: project.title,
@@ -22,7 +22,7 @@ export async function generateMetadata({
     openGraph: {
       title: `${project.title} - Javier Cisneros`,
       description: project.description,
-      url: `https://javiercisneros.me/view-projects/${id}`,
+      url: `https://javiercisneros.me/es/proyectos/${id}`,
     },
   };
 }
@@ -30,10 +30,10 @@ export async function generateMetadata({
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { id } = await params;
   const project =
-    PROJECT_CONSTANTS[parseInt(id) as keyof typeof PROJECT_CONSTANTS];
+    PROJECT_CONSTANTS_ES[parseInt(id) as keyof typeof PROJECT_CONSTANTS_ES];
 
   if (!project) {
-    return <div>Project not found</div>;
+    return <div>Proyecto no encontrado</div>;
   }
 
   return (
@@ -41,7 +41,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <div className="space-y-6">
         <div className="flex items-center space-x-4">
           <Link
-            href="/view-projects"
+            href="/es/proyectos"
             className="inline-flex items-center text-sm font-medium text-markup hover:text-markup/80 transition-colors duration-200"
           >
             <svg
@@ -57,7 +57,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 d="M15 19l-7-7 7-7"
               />
             </svg>
-            Back to Projects
+            Volver a Proyectos
           </Link>
         </div>
 
@@ -80,7 +80,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <div className="space-y-6">
               <div>
                 <h2 className="text-2xl font-bold text-markup mb-4">
-                  Description
+                  Descripción
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
                   {project.long_description}
@@ -90,7 +90,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               {project.learning && (
                 <div>
                   <h2 className="text-2xl font-bold text-markup mb-4">
-                    What I Learned
+                    Lo que Aprendí
                   </h2>
                   <p className="text-muted-foreground leading-relaxed">
                     {project.learning}
@@ -101,7 +101,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               {project.stack && (
                 <div>
                   <h2 className="text-2xl font-bold text-markup mb-4">
-                    Technologies
+                    Tecnologías
                   </h2>
                   <p className="text-muted-foreground leading-relaxed">
                     {project.stack}
@@ -111,7 +111,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
               <div>
                 <h2 className="text-2xl font-bold text-markup mb-4">
-                  Deployment
+                  Despliegue
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   {project.deployment}
@@ -145,7 +145,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               </div>
             </div>
 
-            <ImageGallery images={project.images} language="en" />
+            <ImageGallery images={project.images} language="es" />
           </div>
         </div>
       </div>

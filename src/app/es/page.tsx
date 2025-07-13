@@ -1,15 +1,15 @@
 "use client";
 import Image from "next/image";
-import { TECHNOLOGIES_CONSTANTS } from "./technologies-constants";
+import { TECHNOLOGIES_CONSTANTS } from "../technologies-constants";
 import Link from "next/link";
-import Projects from "../components/Projects";
-import type { Images } from "../components/Projects";
+import Projects from "../../components/Projects";
+import type { Images } from "../../components/Projects";
 import { useTheme } from "next-themes";
 import { useEffect, useState, useRef } from "react";
-import LanguageSwitcher from "../components/LanguageSwitcher";
-import DarkMode from "../components/DarkMode";
+import LanguageSwitcher from "../../components/LanguageSwitcher";
+import DarkMode from "../../components/DarkMode";
 
-export default function Home() {
+export default function HomeES() {
   const techStackRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -37,7 +37,7 @@ export default function Home() {
               Javier Cisneros
             </h1>
             <h2 className="text-xl font-medium text-markup">
-              Software Development Engineer
+              Ingeniero de Desarrollo de Software
             </h2>
           </div>
           <div className="flex items-center space-x-4">
@@ -48,23 +48,23 @@ export default function Home() {
 
         <div className="space-y-4 text-lg leading-relaxed">
           <p>
-            I&apos;m a Front-End software developer from Guadalajara, Jalisco. I
-            started studying software development when I was 16 years old in
-            high school and graduated as a junior software engineer. After that,
-            I started studying a bachelor degree in software development, and
-            graduated in June 2024.
+            Soy un desarrollador Front-End de Guadalajara, Jalisco. Comencé a
+            estudiar desarrollo de software cuando tenía 16 años en la
+            preparatoria y me gradué como ingeniero de software junior. Después
+            de eso, comencé a estudiar una licenciatura en desarrollo de
+            software y me gradué en junio de 2024.
           </p>
           <p>
-            I&apos;m passionate about learning and I&apos;m always up to new
-            challenges, I want to become a better developer, and I&apos;m always
-            looking for new opportunities to grow as a professional.
+            Me apasiona aprender y siempre estoy abierto a nuevos desafíos.
+            Quiero convertirme en un mejor desarrollador y siempre estoy
+            buscando nuevas oportunidades para crecer como profesional.
           </p>
         </div>
 
         {/* Social Links */}
         <nav
           className="flex items-center space-x-6"
-          aria-label="Social media links"
+          aria-label="Enlaces de redes sociales"
         >
           <a
             href="mailto:fjca185@gmail.com"
@@ -115,19 +115,18 @@ export default function Home() {
       {/* Stack Section */}
       <section className="space-y-6">
         <div className="flex items-center space-x-4">
-          <h2 className="text-2xl font-bold text-markup">Tech Stack</h2>
+          <h2 className="text-2xl font-bold text-markup">Stack Tecnológico</h2>
           <div className="flex-1 h-px bg-border"></div>
         </div>
         <p className="text-lg leading-relaxed text-muted-foreground">
-          I&apos;m focusing on web development with modern technologies like
-          React, Next.js, Tailwind CSS, and more. I&apos;m also studying
-          software architecture, design patterns, and best practices in software
-          development.
+          Me enfoco en el desarrollo web con tecnologías modernas como React,
+          Next.js, Tailwind CSS y más. También estudio arquitectura de software,
+          patrones de diseño y mejores prácticas en el desarrollo de software.
         </p>
         <div className="relative group">
           <div
             ref={techStackRef}
-            className="flex overflow-x-auto gap-4 p-4 sm:p-6 bg-muted/30 rounded-xl scrollbar-hide scroll-smooth scroll-m-28 "
+            className="flex overflow-x-auto gap-4 p-4 sm:p-6 bg-muted/30 rounded-xl scrollbar-hide scroll-smooth scroll-m-28"
           >
             {Object.values(TECHNOLOGIES_CONSTANTS).map((technology: Images) => (
               <div
@@ -191,15 +190,15 @@ export default function Home() {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
             <h2 className="text-2xl font-bold text-markup">
-              Featured Projects
+              Proyectos Destacados
             </h2>
             <div className="flex-1 h-px bg-border"></div>
           </div>
           <Link
-            href="/view-projects"
+            href="/es/proyectos"
             className="inline-flex items-center text-sm font-medium text-markup hover:text-markup/80 transition-colors duration-200"
           >
-            View All
+            Ver Todos
             <svg
               className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1"
               fill="none"
@@ -216,21 +215,20 @@ export default function Home() {
           </Link>
         </div>
         <p className="text-lg leading-relaxed text-muted-foreground">
-          Here are some of my recent projects, including personal work and
-          collaborations with other developers.
+          Aquí hay algunos de mis proyectos recientes, incluyendo trabajo
+          personal y colaboraciones con otros desarrolladores.
         </p>
-        <Projects numberOfElements={4} />
+        <Projects numberOfElements={4} language="es" />
       </section>
 
       {/* Experience Section */}
       <section className="space-y-6">
         <div className="flex items-center space-x-4">
-          <h2 className="text-2xl font-bold text-markup">Experience</h2>
+          <h2 className="text-2xl font-bold text-markup">Experiencia</h2>
           <div className="flex-1 h-px bg-border"></div>
         </div>
         <p className="text-lg leading-relaxed text-muted-foreground">
-          Here&apos;s my CV if you want to know more about my experience and
-          background.
+          Aquí está mi CV si quieres saber más sobre mi experiencia y formación.
         </p>
         <div className="rounded-xl overflow-hidden border border-border">
           <iframe
