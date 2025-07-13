@@ -4,9 +4,7 @@ import { TECHNOLOGIES_CONSTANTS } from "./technologies-constants";
 import Link from "next/link";
 import Projects from "../components/Projects";
 import type { Images } from "../components/Projects";
-import { useTheme } from "next-themes";
 import { useEffect, useState, useRef } from "react";
-import LanguageSwitcher from "../components/LanguageSwitcher";
 import DarkMode from "../components/DarkMode";
 
 export default function Home() {
@@ -41,23 +39,32 @@ export default function Home() {
             </h2>
           </div>
           <div className="flex items-center space-x-4">
-            <LanguageSwitcher />
             <DarkMode />
           </div>
         </div>
 
         <div className="space-y-4 text-lg leading-relaxed">
           <p>
-            I&apos;m a Front-End software developer from Guadalajara, Jalisco. I
-            started studying software development when I was 16 years old in
-            high school and graduated as a junior software engineer. After that,
-            I started studying a bachelor degree in software development, and
-            graduated in June 2024.
+            I&apos;m a full-stack developer based in Guadalajara, Jalisco, with
+            a strong focus on front-end development and scalable web
+            applications. I started studying software development at 16 and
+            graduated with a degree in Software Engineering in June 2024.
           </p>
           <p>
-            I&apos;m passionate about learning and I&apos;m always up to new
-            challenges, I want to become a better developer, and I&apos;m always
-            looking for new opportunities to grow as a professional.
+            I have experience building multitenant systems, Progressive Web
+            Apps, and custom tools using modern technologies like React,
+            Next.js, TypeScript, and AWS. I enjoy solving complex architectural
+            challenges by delivering solutions that align with the system&apos;s
+            needs and organizational context, leveraging Infrastructure as Code
+            (IaC) and system design principles. I also focus on optimizing
+            performance and streamlining deployment workflows through CI/CD best
+            practices, using platforms such as AWS CodePipeline and Vercel.
+          </p>
+
+          <p>
+            I&apos;m passionate about learning and constantly improving. I
+            thrive on new challenges and seek opportunities that allow me to
+            grow both technically and professionally.
           </p>
         </div>
 
