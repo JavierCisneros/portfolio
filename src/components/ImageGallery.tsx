@@ -21,37 +21,28 @@ export default function ImageGallery({
   language = "en",
 }: ImageGalleryProps) {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
-  const [fade, setFade] = useState(true);
 
   const openModal = (index: number) => {
     setSelectedImage(index);
-    setFade(true);
     document.body.style.overflow = "hidden";
   };
 
   const closeModal = () => {
     setSelectedImage(null);
-    setFade(true);
     document.body.style.overflow = "unset";
-  };
-
-  const showImage = (index: number) => {
-    setFade(false);
-    setTimeout(() => {
-      setSelectedImage(index);
-      setFade(true);
-    }, 200); // 200ms matches Tailwind's duration-200
   };
 
   const nextImage = () => {
     if (selectedImage !== null) {
-      showImage((selectedImage + 1) % images.length);
+      setSelectedImage((selectedImage + 1) % images.length);
     }
   };
 
   const previousImage = () => {
     if (selectedImage !== null) {
-      showImage(selectedImage === 0 ? images.length - 1 : selectedImage - 1);
+      setSelectedImage(
+        selectedImage === 0 ? images.length - 1 : selectedImage - 1
+      );
     }
   };
 
@@ -59,11 +50,9 @@ export default function ImageGallery({
     if (e.key === "Escape") {
       closeModal();
     } else if (e.key === "ArrowRight") {
-      if (selectedImage !== null)
-        showImage((selectedImage + 1) % images.length);
+      nextImage();
     } else if (e.key === "ArrowLeft") {
-      if (selectedImage !== null)
-        showImage(selectedImage === 0 ? images.length - 1 : selectedImage - 1);
+      previousImage();
     }
   };
 
@@ -176,9 +165,7 @@ export default function ImageGallery({
                 alt={images[selectedImage].alt}
                 width={images[selectedImage].width}
                 height={images[selectedImage].height}
-                className={`max-w-full max-h-[90vh] object-contain transition-opacity duration-200 ${
-                  fade ? "opacity-100" : "opacity-0"
-                }`}
+                className="max-w-full max-h-[90vh] object-contain"
                 priority
               />
             </div>
