@@ -1,53 +1,54 @@
 import Link from "next/link";
-import Projects from "../../components/Projects";
+import Projects from "../../../components/Projects";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Projects",
+  title: "Proyectos",
   description:
-    "Explore my portfolio of web development projects built with React, Next.js, TypeScript, and modern technologies. From personal projects to collaborations.",
+    "Explora mi portafolio de proyectos de desarrollo web construidos con React, Next.js, TypeScript y tecnologías modernas. Desde proyectos personales hasta colaboraciones.",
   keywords: [
-    "web projects",
-    "React projects",
-    "Next.js projects",
-    "portfolio projects",
-    "software development projects",
+    "proyectos web",
+    "proyectos React",
+    "proyectos Next.js",
+    "proyectos portafolio",
+    "proyectos desarrollo de software",
   ],
   openGraph: {
-    title: "Projects - Javier Cisneros",
+    title: "Proyectos - Javier Cisneros",
     description:
-      "Explore my portfolio of web development projects built with React, Next.js, TypeScript, and modern technologies.",
-    url: "https://javiercisneros.dev/view-projects",
+      "Explora mi portafolio de proyectos de desarrollo web construidos con React, Next.js, TypeScript y tecnologías modernas.",
+    url: "https://javiercisneros.me/es/proyectos",
   },
   twitter: {
-    title: "Projects - Javier Cisneros",
+    title: "Proyectos - Javier Cisneros",
     description:
-      "Explore my portfolio of web development projects built with React, Next.js, TypeScript, and modern technologies.",
+      "Explora mi portafolio de proyectos de desarrollo web construidos con React, Next.js, TypeScript y tecnologías modernas.",
   },
 };
 
-export default function projectsPage() {
+export default function proyectosPage() {
   return (
     <main className="relative max-w-2xl m-auto my-16 flex flex-col gap-12 px-6 bg-slate-300 dark:bg-background-dark text-black dark:text-white">
       <div className="scroll-m-20 text-2xl font-bold tracking-tight">
         <div>
           <div className="flex items-center pt-4">
-            <h2 className="font-medium  text-markup">Projects</h2>
+            <h2 className="font-medium text-markup">Proyectos</h2>
             <div className="flex-1 h-px bg-black dark:bg-slate-300 ml-4 rounded-full"></div>
           </div>
           <p className="font-normal text-base pt-2 text-justify">
-            I´ve been working on different projects. Some of them are personal
-            projects, and others are projects that I´ve been working on with
-            other developers.
+            He estado trabajando en diferentes proyectos. Algunos son proyectos
+            personales y otros son proyectos en los que he trabajado con otros
+            desarrolladores.
           </p>
           <p className="font-normal text-base pt-2 text-justify">
-            These are a few projects that I´ve done in the past to practice
-            skills such as programming using JavaScript, TypeScript, React as
-            Front-End framework and Next.js as a full-stack framework.
+            Estos son algunos proyectos que he realizado en el pasado para
+            practicar habilidades como programación usando JavaScript,
+            TypeScript, React como framework Front-End y Next.js como framework
+            full-stack.
           </p>
           <div className="flex items-center space-x-4 mt-4 mb-6">
             <Link
-              href="/"
+              href="/es"
               className="inline-flex items-center text-sm font-medium text-markup hover:text-markup/80 transition-colors duration-200"
             >
               <svg
@@ -63,10 +64,10 @@ export default function projectsPage() {
                   d="M15 19l-7-7 7-7"
                 />
               </svg>
-              Go back
+              Regresar
             </Link>
           </div>
-          <Projects numberOfElements={5} />
+          <Projects numberOfElements={5} language="es" />
         </div>
       </div>
     </main>

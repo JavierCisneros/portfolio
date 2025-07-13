@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { PROJECT_CONSTANTS } from "../app/projects-constants";
+import { PROJECT_CONSTANTS_ES } from "../app/projects-constants-es";
 import Link from "next/link";
 
 export type Project = {
@@ -24,12 +25,17 @@ export type Images = {
   alt: string;
 };
 
-export default function Projects(props: { numberOfElements: number }) {
-  const { numberOfElements } = props;
+export default function Projects(props: {
+  numberOfElements: number;
+  language?: "en" | "es";
+}) {
+  const { numberOfElements, language = "en" } = props;
+  const projectConstants =
+    language === "es" ? PROJECT_CONSTANTS_ES : PROJECT_CONSTANTS;
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
-      {Object.values(PROJECT_CONSTANTS)
+      {Object.values(projectConstants)
         .slice(0, numberOfElements)
         .map((project: Project, index: number) => (
           <article
@@ -84,14 +90,18 @@ export default function Projects(props: { numberOfElements: number }) {
                         d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                       />
                     </svg>
-                    Live Demo
+                    {language === "es" ? "Demo en Vivo" : "Live Demo"}
                   </Link>
 
                   <Link
-                    href={"view-projects/" + index}
+                    href={
+                      language === "es"
+                        ? `/es/proyectos/${index}`
+                        : `/view-projects/${index}`
+                    }
                     className="inline-flex items-center text-sm font-medium text-markup hover:text-markup/80 transition-colors duration-200"
                   >
-                    Read More
+                    {language === "es" ? "Leer Más" : "Read More"}
                     <svg
                       className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1"
                       fill="none"

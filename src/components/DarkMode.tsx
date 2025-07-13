@@ -16,18 +16,38 @@ export default function DarkMode() {
     setTheme(resolvedTheme === "dark" ? "light" : "dark");
   };
 
-  // Show the button immediately with a fallback theme
+  const isDark = mounted && resolvedTheme === "dark";
+
+  // Don't render anything until mounted to prevent flicker
+  if (!mounted) {
+    return (
+      <div className="ml-auto relative inline-flex h-6 w-11 items-center rounded-full bg-gray-200 dark:bg-gray-700 transition-colors duration-200">
+        <div className="h-4 w-4 rounded-full bg-white shadow-lg transform translate-x-1" />
+      </div>
+    );
+  }
+
   return (
     <button
       onClick={toggleTheme}
-      className="ml-auto p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-black dark:text-white"
+      className={`ml-auto relative inline-flex h-6 w-11 items-center rounded-full transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-markup focus:ring-offset-2 ${
+        isDark ? "bg-markup" : "bg-gray-200 dark:bg-gray-700"
+      }`}
       aria-label="Toggle dark mode"
+      role="switch"
+      aria-checked={isDark}
     >
-      {mounted && resolvedTheme === "dark" ? (
-        <Sun className="w-5 h-5" />
-      ) : (
-        <Moon className="w-5 h-5" />
-      )}
+      <div
+        className={`inline-flex items-center justify-center h-4 w-4 rounded-full bg-white shadow-lg transform transition-transform duration-500 ease-in-out ${
+          isDark ? "translate-x-6" : "translate-x-1"
+        }`}
+      >
+        {isDark ? (
+          <Sun className="w-2.5 h-2.5 text-yellow-500" />
+        ) : (
+          <Moon className="w-2.5 h-2.5 text-gray-600" />
+        )}
+      </div>
     </button>
   );
 }
