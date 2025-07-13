@@ -6,31 +6,31 @@ export const PROJECT_CONSTANTS = {
       "Progressive Web App dedicated to centralizing the information of the street markets (tianguis) in the metropolitan area of Guadalajara.",
     images: [
       {
-        src: "/images/tianguiza/tianguiza.png",
+        src: "/images/tianguiz/tianguiza.png",
         height: 1080,
         width: 1920,
         alt: "tianguiza cover",
       },
       {
-        src: "/images/tianguiza/tianguiza-1.png",
+        src: "/images/tianguiz/tianguiza-1.png",
         height: 1080,
         width: 1920,
         alt: "tianguiza image 1",
       },
       {
-        src: "/images/tianguiza/tianguiza-2.png",
+        src: "/images/tianguiz/tianguiza-2.png",
         height: 1080,
         width: 1920,
         alt: "tianguiza image 2",
       },
       {
-        src: "/images/tianguiza/tianguiza-3.png",
+        src: "/images/tianguiz/tianguiza-3.png",
         height: 1080,
         width: 1920,
         alt: "tianguiza image 3",
       },
       {
-        src: "/images/tianguiza/tianguiza-4.png",
+        src: "/images/tianguiz/tianguiza-4.png",
         height: 1080,
         width: 1920,
         alt: "tianguiza image 4",
