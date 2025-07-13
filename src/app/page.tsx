@@ -31,16 +31,16 @@ export default function Home() {
 
         <div className="space-y-4 text-lg leading-relaxed">
           <p>
-            I'm a Front-End software developer from Guadalajara, Jalisco. I
+            I&apos;m a Front-End software developer from Guadalajara, Jalisco. I
             started studying software development when I was 16 years old in
             high school and graduated as a junior software engineer. After that,
             I started studying a bachelor degree in software development, and
             graduated in June 2024.
           </p>
           <p>
-            I'm passionate about learning and I'm always up to new challenges, I
-            want to become a better developer, and I'm always looking for new
-            opportunities to grow as a professional.
+            I&apos;m passionate about learning and I&apos;m always up to new
+            challenges, I want to become a better developer, and I&apos;m always
+            looking for new opportunities to grow as a professional.
           </p>
         </div>
 
@@ -99,24 +99,24 @@ export default function Home() {
           <div className="flex-1 h-px bg-border"></div>
         </div>
         <p className="text-lg leading-relaxed text-muted-foreground">
-          I'm focusing on web development with modern technologies like React,
-          Next.js, Tailwind CSS, and more. I'm also studying software
-          architecture, design patterns, and best practices in software
+          I&apos;m focusing on web development with modern technologies like
+          React, Next.js, Tailwind CSS, and more. I&apos;m also studying
+          software architecture, design patterns, and best practices in software
           development.
         </p>
-        <div className="grid grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-6 p-6 bg-muted/30 rounded-xl">
+        <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-4 sm:gap-6 p-4 sm:p-6 bg-muted/30 rounded-xl">
           {Object.values(TECHNOLOGIES_CONSTANTS).map((technology: Images) => (
             <div
               key={technology.src}
               className="flex flex-col items-center space-y-2 group"
             >
-              <div className="p-3 rounded-lg bg-background hover:bg-muted transition-colors duration-200">
+              <div className="p-3 sm:p-4 rounded-lg bg-background hover:bg-muted transition-colors duration-200">
                 <Image
                   src={technology.src}
                   height={technology.height}
                   width={technology.width}
                   alt={technology.alt}
-                  className="w-8 h-8 group-hover:scale-110 transition-transform duration-200"
+                  className="w-8 h-8 sm:w-10 sm:h-10 group-hover:scale-110 transition-transform duration-200"
                 />
               </div>
             </div>
@@ -167,7 +167,7 @@ export default function Home() {
           <div className="flex-1 h-px bg-border"></div>
         </div>
         <p className="text-lg leading-relaxed text-muted-foreground">
-          Here's my CV if you want to know more about my experience and
+          Here&apos;s my CV if you want to know more about my experience and
           background.
         </p>
         <div className="rounded-xl overflow-hidden border border-border">
