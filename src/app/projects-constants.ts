@@ -21,7 +21,19 @@ export const PROJECT_CONSTANTS = {
         src: "/images/tianguiza/tianguiza-2.png",
         height: 1080,
         width: 1920,
-        alt: "tianguiza image 1",
+        alt: "tianguiza image 2",
+      },
+      {
+        src: "/images/tianguiza/tianguiza-3.png",
+        height: 1080,
+        width: 1920,
+        alt: "tianguiza image 3",
+      },
+      {
+        src: "/images/tianguiza/tianguiza-4.png",
+        height: 1080,
+        width: 1920,
+        alt: "tianguiza image 4",
       },
     ],
     long_description:
@@ -51,6 +63,12 @@ export const PROJECT_CONSTANTS = {
         height: 1080,
         width: 1920,
         alt: "sudorfit cover",
+      },
+      {
+        src: "/images/sudorfit/sudorfit-3.webp",
+        height: 1080,
+        width: 2400,
+        alt: "sudorfit image 2",
       },
       {
         src: "/images/sudorfit/sudorfit-1.png",
@@ -103,8 +121,10 @@ export const PROJECT_CONSTANTS = {
         alt: "gif expert image 2",
       },
     ],
-    long_description: "",
-    learning: "",
+    long_description:
+      "Web application that allows you to find gifs by searching for a keyword.",
+    learning:
+      "This project helped me learn the fundamentals of React, including components, hooks, and state management. I learned how to make API calls to external services (GIPHY API) and how to handle asynchronous operations. I also practiced working with event handlers and form inputs in React.",
     links: [
       {
         type: "Web",
