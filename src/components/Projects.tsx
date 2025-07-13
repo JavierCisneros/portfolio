@@ -1,6 +1,9 @@
 import Image from "next/image";
 import { PROJECT_CONSTANTS } from "../app/projects-constants";
 import Link from "next/link";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
+
 export type Project = {
   type: string;
   title: string;
@@ -22,15 +25,27 @@ export type Images = {
   width: number;
   alt: string;
 };
+
 export default function Projects(props: { numberOfElements: number }) {
   const { numberOfElements } = props;
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
       {Object.values(PROJECT_CONSTANTS)
         .slice(0, numberOfElements)
         .map((project: Project, index: number) => (
           <article
-            className="flex flex-col w-full overflow-hidden rounded-lg shadow-lg bg-background border border-gray-400 hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
+            className="flex flex-col w-full overflow-hidden rounded-lg shadow-lg border border-gray-400 hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 bg-white dark:bg-background"
             key={index}
           >
             <Image
@@ -41,10 +56,10 @@ export default function Projects(props: { numberOfElements: number }) {
               className="object-cover object-center h-48"
             />
 
-            <div className="flex flex-col justify-between px-4 dark:bg-background  bg-white border border-gray-600 h-full ">
+            <div className="flex flex-col justify-between px-4 border border-gray-600 h-full bg-white dark:bg-background">
               <Link
                 href={project.links[0].link}
-                className="block text-2xl font-black leading-tight hover:underline hover:text-markup pt-4 "
+                className="block text-2xl font-black leading-tight hover:underline hover:text-markup pt-4"
                 key={index}
               >
                 {project.title}

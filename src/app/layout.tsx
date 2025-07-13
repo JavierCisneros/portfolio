@@ -4,6 +4,8 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "next-themes";
+import ThemeWrapper from "./ThemeWrapper";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -15,6 +17,7 @@ export const metadata: Metadata = {
     type: "website",
   },
 };
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -23,15 +26,16 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
-      <body className={`${inter.className}  dark:bg-background antialiased `}>
+      <body className={`${inter.className} antialiased`}>
         <ThemeProvider
           attribute="class"
-          enableSystem={false}
-          disableTransitionOnChange
           defaultTheme="dark"
+          enableSystem={true}
+          disableTransitionOnChange={true}
+          storageKey="portfolio-theme"
+          themes={["light", "dark"]}
         >
-          {" "}
-          {children}
+          <ThemeWrapper>{children}</ThemeWrapper>
           <Analytics />
           <SpeedInsights />
         </ThemeProvider>
