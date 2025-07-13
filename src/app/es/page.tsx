@@ -4,9 +4,7 @@ import { TECHNOLOGIES_CONSTANTS } from "../technologies-constants";
 import Link from "next/link";
 import Projects from "../../components/Projects";
 import type { Images } from "../../components/Projects";
-import { useTheme } from "next-themes";
-import { useEffect, useState, useRef } from "react";
-import LanguageSwitcher from "../../components/LanguageSwitcher";
+import { useEffect, useRef } from "react";
 import DarkMode from "../../components/DarkMode";
 
 export default function HomeES() {
@@ -41,7 +39,6 @@ export default function HomeES() {
             </h2>
           </div>
           <div className="flex items-center space-x-4">
-            <LanguageSwitcher />
             <DarkMode />
           </div>
         </div>
