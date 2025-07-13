@@ -54,18 +54,17 @@ export default function Home() {
             I have experience building multitenant systems, Progressive Web
             Apps, and custom tools using modern technologies like React,
             Next.js, TypeScript, and AWS. I enjoy solving complex architectural
-            challenges by delivering solutions that align with the
-            system`&apos;s needs and organizational context, leveraging
-            Infrastructure as Code (IaC) and system design principles. I also
-            focus on optimizing performance and streamlining deployment
-            workflows through CI/CD best practices, using platforms such as AWS
-            CodePipeline and Vercel.
+            challenges by delivering solutions that align with the system&apos;s
+            needs and organizational context, leveraging Infrastructure as Code
+            (IaC) and system design principles. I also focus on optimizing
+            performance and streamlining deployment workflows through CI/CD best
+            practices, using platforms such as AWS CodePipeline and Vercel.
           </p>
 
           <p>
-            I'm passionate about learning and constantly improving. I thrive on
-            new challenges and seek opportunities that allow me to grow both
-            technically and professionally.
+            I&apos;m passionate about learning and constantly improving. I
+            thrive on new challenges and seek opportunities that allow me to
+            grow both technically and professionally.
           </p>
         </div>
 
