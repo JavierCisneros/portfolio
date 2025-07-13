@@ -45,6 +45,7 @@ html {
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-background-dark: oklch(0.1822 0 0);
+  --color-markup: #004aad;
 }
 
 :root {
