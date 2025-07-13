@@ -1,8 +1,6 @@
 import Image from "next/image";
 import { PROJECT_CONSTANTS } from "../app/projects-constants";
 import Link from "next/link";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 
 export type Project = {
   type: string;
@@ -28,16 +26,6 @@ export type Images = {
 
 export default function Projects(props: { numberOfElements: number }) {
   const { numberOfElements } = props;
-  const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return <div>Loading...</div>;
-  }
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">

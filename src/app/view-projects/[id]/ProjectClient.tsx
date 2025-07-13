@@ -2,8 +2,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import ReturnButton from "../../../components/ReturnButton";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 
 export type Project = {
   type: string;
@@ -30,17 +28,6 @@ export type Images = {
 };
 
 export default function ProjectClient({ project }: { project: Project }) {
-  const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return <div>Loading...</div>;
-  }
-
   return (
     <main className="relative max-w-2xl m-auto my-16 flex flex-col gap-12 px-6 bg-white dark:bg-background text-black dark:text-white">
       <div className="scroll-m-20 text-2xl font-bold tracking-tight">

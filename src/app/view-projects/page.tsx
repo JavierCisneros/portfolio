@@ -1,21 +1,8 @@
 "use client";
 import Link from "next/link";
 import Projects from "../../components/Projects";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 
 export default function projectsPage() {
-  const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return <div>Loading...</div>;
-  }
-
   return (
     <main className="relative max-w-2xl m-auto my-16 flex flex-col gap-12 px-6 bg-white dark:bg-background text-black dark:text-white">
       <div className="scroll-m-20 text-2xl font-bold tracking-tight">

@@ -13,17 +13,6 @@ const DarkMode = dynamic(() => import("../components/DarkMode"), {
 });
 
 export default function Home() {
-  const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return;
-  }
-
   return (
     <main className="relative max-w-2xl m-auto my-16 flex flex-col gap-12 px-6 bg-white dark:bg-background text-black dark:text-white antialiased">
       <div className="scroll-m-20 text-2xl font-bold tracking-tight">
