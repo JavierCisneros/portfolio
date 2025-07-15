@@ -123,7 +123,7 @@ export default function Home() {
       <section className="space-y-6">
         <div className="flex items-center space-x-4">
           <h2 className="text-2xl font-bold text-markup">Tech Stack</h2>
-          <div className="flex-1 h-px bg-border"></div>
+          <div className="flex-1 h-px bg-black dark:bg-border"></div>
         </div>
         <p className="text-lg leading-relaxed text-muted-foreground">
           I&apos;m focusing on web development with modern technologies like
@@ -197,14 +197,14 @@ export default function Home() {
       <section className="space-y-6">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
-            <h2 className="text-2xl font-bold text-markup">
+            <h2 className="text-2xl font-bold text-markup  ">
               Featured Projects
             </h2>
-            <div className="flex-1 h-px bg-border"></div>
           </div>
+          <div className="flex-1 h-px bg-black dark:bg-border mx-4"></div>
           <Link
             href="/view-projects"
-            className="inline-flex items-center text-sm font-medium text-markup hover:text-markup/80 transition-colors duration-200"
+            className="  inline-flex items-center text-sm font-medium text-markup hover:text-markup/80 transition-colors duration-200"
           >
             View All
             <svg
@@ -233,7 +233,7 @@ export default function Home() {
       <section className="space-y-6">
         <div className="flex items-center space-x-4">
           <h2 className="text-2xl font-bold text-markup">Experience</h2>
-          <div className="flex-1 h-px bg-border"></div>
+          <div className="flex-1 h-px bg-black dark:bg-border"></div>
         </div>
         <p className="text-lg leading-relaxed text-muted-foreground">
           Here&apos;s my CV if you want to know more about my experience and
