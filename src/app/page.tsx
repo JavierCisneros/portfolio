@@ -25,6 +25,16 @@ export default function Home() {
     return () => container.removeEventListener("wheel", handleWheel);
   }, []);
 
+  const scrollTechStack = (direction: "left" | "right") => {
+    const container = techStackRef.current;
+    if (!container) return;
+    const scrollAmount = 200; // Adjust as needed
+    container.scrollBy({
+      left: direction === "left" ? -scrollAmount : scrollAmount,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <main className="relative max-w-4xl m-auto my-16 flex flex-col gap-16 px-6 bg-slate-300 dark:bg-background-dark text-black dark:text-white antialiased">
       {/* Header Section */}
@@ -158,7 +168,12 @@ export default function Home() {
           </div>
 
           {/* Left Arrow - Only visible on hover */}
-          <div className="absolute left-1 top-1/2 -translate-y-1/2 w-8 h-8 bg-background/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg border border-border opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+          <button
+            type="button"
+            onClick={() => scrollTechStack("left")}
+            className="absolute left-1 top-1/2 -translate-y-1/2 w-8 h-8 bg-background/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg border border-border opacity-0 group-hover:opacity-100 transition-opacity duration-200 cursor-pointer z-10"
+            aria-label="Scroll left"
+          >
             <svg
               className="w-4 h-4 text-muted-foreground"
               fill="none"
@@ -172,10 +187,15 @@ export default function Home() {
                 d="M15 19l-7-7 7-7"
               />
             </svg>
-          </div>
+          </button>
 
           {/* Right Arrow - Only visible on hover */}
-          <div className="absolute right-1 top-1/2 -translate-y-1/2 w-8 h-8 bg-background/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg border border-border opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+          <button
+            type="button"
+            onClick={() => scrollTechStack("right")}
+            className="absolute right-1 top-1/2 -translate-y-1/2 w-8 h-8 bg-background/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg border border-border opacity-0 group-hover:opacity-100 transition-opacity duration-200 cursor-pointer z-10"
+            aria-label="Scroll right"
+          >
             <svg
               className="w-4 h-4 text-muted-foreground"
               fill="none"
@@ -189,7 +209,7 @@ export default function Home() {
                 d="M9 5l7 7-7 7"
               />
             </svg>
-          </div>
+          </button>
         </div>
       </section>
 
