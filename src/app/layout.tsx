@@ -58,14 +58,7 @@ export const metadata: Metadata = {
       "Front-End software developer from Guadalajara, Jalisco specializing in React, Next.js, TypeScript, and modern web technologies. View my projects and experience. Desarrollador Front-End de Guadalajara, Jalisco especializado en React, Next.js, TypeScript y tecnologías web modernas.",
     url: "https://javiercisneros.me",
     siteName: "Javier Cisneros Portfolio",
-    images: [
-      {
-        url: "/images/javier_cisneros.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Javier Cisneros - Software Development Engineer",
-      },
-    ],
+    images: [],
     locale: "en_US",
     alternateLocale: "es_MX",
     type: "website",
@@ -75,7 +68,7 @@ export const metadata: Metadata = {
     title: "Javier Cisneros - Software Development Engineer",
     description:
       "Front-End software developer from Guadalajara, Jalisco specializing in React, Next.js, TypeScript, and modern web technologies.",
-    images: ["/images/javier_cisneros.jpg"],
+    images: [],
     creator: "@javiercisneros",
   },
   robots: {
@@ -137,7 +130,6 @@ export default function RootLayout({
                 "@type": "EducationalOrganization",
                 name: "Software Development Degree",
               },
-              image: "https://javiercisneros.me/images/javier_cisneros.jpg",
             }),
           }}
         />
