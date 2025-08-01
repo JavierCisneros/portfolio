@@ -48,7 +48,7 @@ export default function Home() {
                 Javier Cisneros
               </h1>
               <h2 className="text-xl font-medium text-markup">
-                Software Development Engineer
+                Software Engineer
               </h2>
             </div>
             <div className="flex items-center space-x-4">

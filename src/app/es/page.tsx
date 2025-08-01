@@ -40,7 +40,7 @@ export default function HomeES() {
                 Ingeniero de Desarrollo de Software
               </h2>
             </div>
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-4 ">
               <DarkMode />
             </div>
           </div>
