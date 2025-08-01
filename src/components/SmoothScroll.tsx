@@ -5,12 +5,33 @@ import {
   useState,
   useCallback,
   useLayoutEffect,
+  useEffect,
 } from "react";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+
+// Utility to detect mobile devices
+const isMobile = () => {
+  if (typeof window === "undefined") return false;
+  return (
+    window.innerWidth <= 768 ||
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    )
+  );
+};
 
 const SmoothScroll = ({ children }: { children: ReactNode }) => {
   const contentRef = useRef<HTMLDivElement>(null);
   const [contentHeight, setContentHeight] = useState(0);
+  const [isMobileDevice, setIsMobileDevice] = useState(false);
+
+  // Detect mobile device on mount and resize
+  useEffect(() => {
+    const checkMobile = () => setIsMobileDevice(isMobile());
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   // Medimos solo el contenido real
   const resizePageHeight = useCallback((entries: ResizeObserverEntry[]) => {
@@ -35,12 +56,26 @@ const SmoothScroll = ({ children }: { children: ReactNode }) => {
     [0, contentHeight],
     [0, -contentHeight]
   );
-  const physics = {
-    damping: 15,
-    mass: 0.27,
-    stiffness: 100,
-  };
+
+  // Different physics for mobile vs desktop
+  const physics = isMobileDevice
+    ? {
+        damping: 8, // Reduced damping for faster response
+        mass: 0.15, // Reduced mass for quicker movement
+        stiffness: 150, // Increased stiffness for snappier feel
+      }
+    : {
+        damping: 15,
+        mass: 0.27,
+        stiffness: 100,
+      };
+
   const spring = useSpring(transform, physics);
+
+  // If mobile device, render without smooth scroll
+  if (isMobileDevice) {
+    return <div ref={contentRef}>{children}</div>;
+  }
 
   return (
     <>
