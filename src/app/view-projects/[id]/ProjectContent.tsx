@@ -37,7 +37,7 @@ export default function ProjectContent({ project }: ProjectContentProps) {
           <div className="space-y-6">
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-markup/10 text-white border border-markup/20">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-markup/10 text-markup border border-markup/20">
                   {project.type}
                 </span>
               </div>
