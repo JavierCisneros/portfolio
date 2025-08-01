@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Francisco Javier Cisneros Avila - Software Development Engineer",
+    name: "Francisco Javier Cisneros Avila - Software Engineer",
     short_name: "Javier Cisneros",
     description:
       "Front-End software developer from Guadalajara, Jalisco specializing in React, Next.js, TypeScript, and modern web technologies.",

@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "Javier Cisneros - Software Development Engineer",
+    default: "Javier Cisneros - Software Engineer",
     template: "%s | Javier Cisneros",
   },
   description:
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.json",
   openGraph: {
-    title: "Javier Cisneros - Software Development Engineer",
+    title: "Javier Cisneros - Software Engineer",
     description:
       "Front-End software developer from Guadalajara, Jalisco specializing in React, Next.js, TypeScript, and modern web technologies. View my projects and experience. Desarrollador Front-End de Guadalajara, Jalisco especializado en React, Next.js, TypeScript y tecnologías web modernas.",
     url: "https://javiercisneros.me",
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Javier Cisneros - Software Development Engineer",
+    title: "Javier Cisneros - Software Engineer",
     description:
       "Front-End software developer from Guadalajara, Jalisco specializing in React, Next.js, TypeScript, and modern web technologies.",
     images: [],
@@ -103,7 +103,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Javier Cisneros",
-              jobTitle: "Software Development Engineer",
+              jobTitle: "Software Engineer",
               description:
                 "Front-End software developer from Guadalajara, Jalisco specializing in React, Next.js, TypeScript, and modern web technologies.",
               url: "https://javiercisneros.me",
