@@ -51,7 +51,7 @@ export default function Projects(props: {
                 className="object-cover object-center h-48 w-full group-hover:scale-105 transition-transform duration-300"
               />
               <div className="absolute top-3 left-3">
-                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-markup/10 text-markup border border-markup/20">
+                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-markup/10 text-markup border border-markup/20 ">
                   {project.type}
                 </span>
               </div>
