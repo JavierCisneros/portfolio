@@ -4,36 +4,39 @@ const caseStudies = [
   {
     title: "Savings App",
     summary: "A savings application built for more than 10,000 credit union members.",
-    role: "I took the application from technical discovery through production support, working across the client, AWS, and third-party banking systems.",
-    constraint: "Authentication and financial data crossed system boundaries, so we needed to create a system that could comunicaate betweeen all of the systems, integrating our solution into the exteraml online banking platform and use our system to manage operations into the banking core systems.",
-    decision: "Created a secure authentication process with Cognito to handle the authentication and authorization process with the different systems used in the application. ",
-    flow: ["Banno (Online Banking)", "Savings App", "Internal API", "Core Banking system"],
+    role: "I took the application from technical discovery through production support, working across the client, AWS, and core banking systems.",
+    constraint: "Authentication and financial data had to move between several systems: our application, the external online banking platform, and the core banking system.",
+    decision: "I used Cognito to manage authentication and authorization across the systems connected to the application.",
+    flow: ["Banno (Online Banking)", "Savings App", "Internal API", "Core Banking System"],
+    result: "I built a cross-platform application that promotes savings within online banking while meeting compliance and security requirements across the connected banking systems.",
     stack: "React, TypeScript, Node.js, Python, API Gateway, Cognito, DynamoDB",
   },
   {
     title: "Embedded Online Banking Integration",
     summary: "A third-party financial product embedded in an existing online banking application.",
-    role: "I led the production launches, managed the authentication workflow connecting the online banking platform with the embedded application.",
-    constraint: "The product ran in an iframe, and third-party cookie restrictions broke session creation in some browsers, particularly on Apple devices due to the use of apple webkit and other browser restrictions on third-party cookies.",
-    decision: "I reproduced the failures across browsers, traced them to the cookie dependency, and worked with the vendor to change how sessions were created, guiding on how to use secure authentication in a server side rendered application.",
-    flow: ["Online banking (Q2)", "Q2 SDK", "Embedded application", "Vendor Application"],
-    stack: "Q2 SDK, JavaScript, iframe messaging, server-side rendering",
+    role: "I led the production launches and managed the authentication workflow between the online banking platform and the embedded application.",
+    constraint: "The product ran in an iframe, and third-party cookie restrictions broke session creation in some browsers, particularly on Apple devices using WebKit.",
+    decision: "I reproduced the failures across browsers, traced them to the cookie dependency, and worked with the vendor to change how sessions were created. I also advised the vendor on authentication for their server-side rendered application.",
+    flow: ["Online Banking (Q2)", "Q2 SDK", "Embedded Application", "Vendor Application"],
+    result: "I integrated the third-party product into the online banking platform and worked around cookie restrictions with a different authentication and session management approach.",
+    stack: "Python, HTML, CSS, JavaScript, Server-side Rendering, iframe messaging",
   },
   {
     title: "Time Reporting Application",
     summary: "A serverless application that replaced manual time reporting for more than 50 employees.",
     role: "I built the application and moved the team from manual reports to one shared workflow.",
-    constraint: "Employees worked across time zones, different countries, and different roles, needed of a stadarized report workflow to reduce manual work, needed to create a workflow that could reduce the reporting time by a 66%.",
-    decision: "In this project I neeed to work close to the UX/UI team, so we could create a workflow, that could fit the needs of all the different roles, from the employees to the executive leadership, with the constrains in place, we ended up with a workflow that reduced the reporting time by a 50% at launch and of a 75% at 6 months, improved the accuracy of the reports and billing, and reduced the errors in the reports.",
-    flow: ["Employees", "Time App", "Project Managers", "Managers", "Accounting", "Financial Reporting", "Billing", "Executive Leadership"],
-    stack: "CloudFront + S3, Cognito, API Gateway, Lambda services, RDS",
+    constraint: "Employees worked across time zones, countries, and roles. The team needed a standardized reporting workflow that would reduce reporting time by 66%.",
+    decision: "Rather than recreating each department's manual process, we designed one centralized workflow with the stakeholders and employees who would use it. Employees entered time through a weekly interface, while project managers, accounting, and leadership received the level of detail required for approvals, billing, and financial reporting.",
+    flow: ["Employees", "Time App", "Project Managers", "Managers", "Accounting", "Billing", "Executive Leadership"],
+    result: "I created a centralized time-reporting workflow that reduced manual reporting time by 50% at launch and 75% within six months while improving accuracy and reducing errors.",
+    stack: "React, Node.js, Cognito, AWS Lambda, API Gateway, RDS, PostgreSQL, AWS",
   },
 ] as const;
 
 const supportingWork = [
   ["Treasury check verification", "Integrated a U.S. Treasury API through AWS Lambda to identify mismatched, previously paid, or potentially invalid checks."],
   ["Production fee remediation", "Built a Python and Lambda process that corrected fee-related records for more than 200 credit union members."],
-  ["Financial operations tools", "Built tools for member maintenance, transaction search, share conversion, and loan workflows that reduce tellers workload by reducing manual work."],
+  ["Financial operations tools", "Built tools for member maintenance, transaction search, share conversion, and loan workflows that reduced tellers' workloads and manual steps."],
   ["Reporting and automation", "Maintained scheduled AWS jobs for reports and recurring internal work, using .NET and MySQL connected to Snowflake."],
 ] as const;
 
@@ -58,7 +61,7 @@ export default function Home() {
           <div>
             <h1 className="max-w-4xl text-5xl font-semibold tracking-[-0.05em] sm:text-6xl md:text-7xl">Full-Stack Software Engineer</h1>
             <p className="mt-8 max-w-2xl text-lg leading-8 text-muted-foreground md:text-xl">
-              I build Web applications, from the first contact until the application is running in production.
+              I build web applications, from the first technical discussion through production.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-4 text-sm font-semibold">
               <a className="border-b border-foreground pb-1 transition-opacity hover:opacity-60" href="mailto:hi@javiercisneros.me">Start a conversation</a>
@@ -98,6 +101,7 @@ export default function Home() {
                         </li>
                       ))}
                     </ol>
+                    {project.result && <p className="text-sm text-muted-foreground mt-4">{project.result}</p>}
                   </div>
                   <p className="text-sm text-muted-foreground">{project.stack}</p>
                 </div>

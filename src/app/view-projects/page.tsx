@@ -14,14 +14,13 @@ export default function projectsPage() {
               <div className="flex-1 h-px bg-black dark:bg-slate-300 ml-4 rounded-full"></div>
             </div>
             <p className="font-normal text-base pt-2 text-justify">
-              I´ve been working on different projects. Some of them are personal
-              projects, and others are projects that I´ve been working on with
-              other developers.
+              I've worked on personal projects and collaborated with other
+              developers.
             </p>
             <p className="font-normal text-base pt-2 text-justify">
-              These are a few projects that I´ve done in the past to practice
-              skills such as programming using JavaScript, TypeScript, React as
-              Front-End framework and Next.js as a full-stack framework.
+              These older projects helped me practice JavaScript, TypeScript,
+              React as a front-end framework, and Next.js as a full-stack
+              framework.
             </p>
             <div className="flex items-center space-x-4 mt-4 mb-6">
               <Link

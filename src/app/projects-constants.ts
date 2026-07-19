@@ -3,7 +3,7 @@ export const PROJECT_CONSTANTS = {
     type: "Progressive Web App",
     title: "Tianguiza",
     description:
-      "Progressive Web App dedicated to centralizing the information of the street markets (tianguis) in the metropolitan area of Guadalajara.",
+      "Progressive Web App that centralizes information about street markets (tianguis) in the Guadalajara metropolitan area.",
     images: [
       {
         src: "/images/tianguiz/tianguiza.png",
@@ -37,9 +37,9 @@ export const PROJECT_CONSTANTS = {
       },
     ],
     long_description:
-      "Tianguiza is a Progressive Web App that centralizes the information of the street markets (tianguis) in the metropolitan area of Guadalajara. The application allows users to search for street markets by location, day, and categories. It also allows vendors to register their market stall and manage their information.",
+      "Tianguiza is a Progressive Web App that centralizes information about street markets (tianguis) in the Guadalajara metropolitan area. Users can search by location, day, and category. Vendors can also register their stalls and manage their information.",
     learning:
-      "In this project I was member of a 3-person team, I was involved in the development of many features, such as the search functionality and categories filtering, the stalls and tianguis registration forms as the use of the OpenStreetMap API. I also worked on the deployment of the app on Vercel and the database on NEON. I learned how to work with a team, how to manage a project, and how to deploy a full-stack application. I also learned how to work with postgreSQL and how to use an ORM to interact with it. I also learned how to use figma as design system",
+      "I was part of a three-person team and developed features including search, category filters, vendor and market registration forms, and the OpenStreetMap integration. I also deployed the app to Vercel and the database to Neon. I learned how to work on a team, manage a project, deploy a full-stack application, and use PostgreSQL with an ORM.",
     links: [
       { type: "Web", link: "https://tianguiza.com" },
       {
@@ -48,9 +48,9 @@ export const PROJECT_CONSTANTS = {
       },
     ],
     deployment:
-      "This app was deployed on Vercel, using Next.js and PostgreSQL, is also available on Google Play Store. Below is the link to the app.",
+      "The app is deployed on Vercel using Next.js and PostgreSQL. It's also available on the Google Play Store.",
     stack:
-      "React, Next.js, Tailwind CSS, PostgreSQL, Drizzle ORM, OpensStreetMaps, React-Leaflet, ",
+      "React, Next.js, Tailwind CSS, PostgreSQL, Drizzle ORM, OpenStreetMap, React-Leaflet",
   },
   1: {
     type: "Mobile App",
@@ -84,23 +84,23 @@ export const PROJECT_CONSTANTS = {
       },
     ],
     long_description:
-      "Sudorfit is an app that allows you to track your physical activity, count calories, and set goals. The app has a user-friendly interface that makes it easy to track your progress and stay motivated. It awards medals to users when they achieve a goal. It also features a pet named Sudorito that provides motivational messages to users based on their achieved goals.",
+      "SudorFit lets users track physical activity, count calories, and set goals. It awards medals when users reach a goal and includes a pet named Sudorito that responds to their progress with motivational messages.",
     learning:
-      "Developing this app I learned basic concepts of Android development, such as activities, fragments, and intents. I also practiced how to use Firebase to store user data and how to use Android Studio to develop Android apps. I also learned how to use the Google Play Store to deploy an app.",
+      "While developing this app, I learned basic Android concepts such as activities, fragments, and intents. I also practiced using Firebase to store user data, Android Studio to develop the app, and the Google Play Store to publish it.",
     links: [
       {
         type: "Google Play Store",
         link: "https://play.google.com/store/apps/details?id=com.sudorlabs.sudorfit&pcampaignid=web_share",
       },
     ],
-    deployment: "This app was deployed on Google Play Store.",
-    stack: "Java, Firebase and Android Studio",
+    deployment: "This app was published on the Google Play Store.",
+    stack: "Java, Firebase, and Android Studio",
   },
   2: {
     type: "Web App",
     title: "GIF Expert",
     description:
-      "Web application that allows you to find gifs by searching for a keyword.",
+      "Web application that lets you find GIFs by searching for a keyword.",
     images: [
       {
         src: "/images/gif-expert/gif-expert.png",
@@ -122,7 +122,7 @@ export const PROJECT_CONSTANTS = {
       },
     ],
     long_description:
-      "Web application that allows you to find gifs by searching for a keyword.",
+      "Web application that lets you find GIFs by searching for a keyword.",
     learning:
       "This project helped me learn the fundamentals of React, including components, hooks, and state management. I learned how to make API calls to external services (GIPHY API) and how to handle asynchronous operations. I also practiced working with event handlers and form inputs in React.",
     links: [
@@ -132,12 +132,12 @@ export const PROJECT_CONSTANTS = {
       },
     ],
     deployment:
-      "This app was deployed on GitHub Pages and is available in the next link.",
+      "This app was deployed on GitHub Pages and is available at the following link.",
     stack: "",
   },
   3: {
     type: "Web App",
-    title: "todoApp",
+    title: "Todo App",
     description:
       "Web application that allows you to create a list of tasks to do and mark them as completed.",
     images: [
@@ -161,21 +161,21 @@ export const PROJECT_CONSTANTS = {
       },
     ],
     long_description:
-      "A simple todo app that allows you to create a list of tasks to do and mark them as completed. The app is built with vanilla JavaScript and uses local storage to store the tasks.",
+      "A todo app for creating tasks and marking them as completed. It's built with vanilla JavaScript and stores tasks in local storage.",
     learning:
-      "With this todo app, I learned how to work with local storage in JavaScript and how to manipulate the DOM with vanilla JavaScript. I used a simple template to only practica JS.",
+      "With this todo app, I learned how to work with local storage and manipulate the DOM using vanilla JavaScript. I used a simple template so I could focus on practicing JavaScript.",
     links: [
       { type: "Web", link: "https://javiercisneros.github.io/todo-app/" },
     ],
     deployment:
-      "This app was deployed on GitHub Pages and is available in the next link.",
+      "This app was deployed on GitHub Pages and is available at the following link.",
     stack: "",
   },
   4: {
     type: "Web App",
-    title: "BlackJack",
+    title: "Blackjack",
     description:
-      "Web application to play the classic card game of BlackJack against the computer.",
+      "Web application for playing the classic card game of blackjack against the computer.",
     images: [
       {
         src: "/images/blackjack/blackjack.png",
@@ -197,14 +197,14 @@ export const PROJECT_CONSTANTS = {
       },
     ],
     long_description:
-      "A simple and easy to use web application to play the classic card game of BlackJack against the computer. The app is built with vanilla JavaScript and uses local storage to store the user's score.",
+      "A web application for playing blackjack against the computer. It's built with vanilla JavaScript and stores the user's score in local storage.",
     learning:
-      "This was one of the first projects I did with JavaScript. I learned how to manipulate the DOM with vanilla JavaScript and how to use local storage to store data. I also learned how to use the Math.random() function to generate random numbers. I used a simple template to only practics JS.",
+      "This was one of my first JavaScript projects. I learned how to manipulate the DOM, use local storage, and generate random numbers with Math.random(). I used a simple template so I could focus on practicing JavaScript.",
     links: [
       { type: "Web", link: "https://javiercisneros.github.io/blackjack/" },
     ],
     deployment:
-      "This app was deployed on GitHub Pages and is available in the next link.",
+      "This app was deployed on GitHub Pages and is available at the following link.",
     stack: "",
   },
 } as const;
