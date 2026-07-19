@@ -10,30 +10,25 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "Javier Cisneros - Software Engineer",
+    default: "Javier Cisneros | Full-Stack Software Engineer",
     template: "%s | Javier Cisneros",
   },
   description:
-    "Front-End software developer from Guadalajara, Jalisco specializing in React, Next.js, TypeScript, and modern web technologies. View my projects and experience. Desarrollador Front-End de Guadalajara, Jalisco especializado en React, Next.js, TypeScript y tecnologías web modernas.",
+    "Full-Stack Software Engineer building cloud-native applications, secure platform integrations, and production systems with React, TypeScript, Node.js, and AWS.",
   keywords: [
-    "software developer",
-    "front-end developer",
-    "React developer",
-    "Next.js developer",
-    "TypeScript developer",
-    "web developer",
+    "software engineer",
+    "full-stack developer",
+    "cloud application engineer",
+    "AWS",
+    "cloud architecture",
+    "system integrations",
+    "financial applications",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Node.js",
     "Guadalajara",
     "Mexico",
-    "desarrollador de software",
-    "desarrollador front-end",
-    "desarrollador React",
-    "desarrollador Next.js",
-    "desarrollador TypeScript",
-    "desarrollador web",
-    "Guadalajara México",
-    "programador web",
-    "desarrollador web Guadalajara",
-    "programador React Guadalajara",
   ],
   authors: [{ name: "Javier Cisneros" }],
   creator: "Javier Cisneros",
@@ -46,30 +41,31 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://javiercisneros.me"),
   alternates: {
     canonical: "/",
-    languages: {
-      en: "/",
-      es: "/es",
-    },
   },
-  manifest: "/manifest.json",
+  manifest: "/manifest.webmanifest",
   openGraph: {
-    title: "Javier Cisneros - Software Engineer",
+    title: "Javier Cisneros | Full-Stack Software Engineer",
     description:
-      "Front-End software developer from Guadalajara, Jalisco specializing in React, Next.js, TypeScript, and modern web technologies. View my projects and experience. Desarrollador Front-End de Guadalajara, Jalisco especializado en React, Next.js, TypeScript y tecnologías web modernas.",
+      "Cloud-native applications, secure integrations, and end-to-end production ownership with React, TypeScript, Node.js, and AWS.",
     url: "https://javiercisneros.me",
     siteName: "Javier Cisneros Portfolio",
-    images: [],
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Javier Cisneros, Full-Stack Software Engineer",
+      },
+    ],
     locale: "en_US",
-    alternateLocale: "es_MX",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Javier Cisneros - Software Engineer",
+    title: "Javier Cisneros | Full-Stack Software Engineer",
     description:
-      "Front-End software developer from Guadalajara, Jalisco specializing in React, Next.js, TypeScript, and modern web technologies.",
-    images: [],
-    creator: "@javiercisneros",
+      "Cloud-native applications, secure integrations, and end-to-end production ownership with React, TypeScript, Node.js, and AWS.",
+    images: ["/opengraph-image"],
   },
   robots: {
     index: true,
@@ -81,9 +77,6 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
-  },
-  verification: {
-    google: "your-google-verification-code",
   },
 };
 
@@ -102,23 +95,24 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              name: "Javier Cisneros",
-              jobTitle: "Software Engineer",
+              name: "Francisco Javier Cisneros Avila",
+              alternateName: "Javier Cisneros",
+              jobTitle: "Full-Stack Software Engineer",
               description:
-                "Front-End software developer from Guadalajara, Jalisco specializing in React, Next.js, TypeScript, and modern web technologies.",
+                "Full-Stack Software Engineer focused on cloud-native applications, AWS architecture, and complex platform integrations.",
               url: "https://javiercisneros.me",
               sameAs: [
                 "https://linkedin.com/in/javiercisnerosavila",
                 "https://github.com/JavierCisneros",
               ],
               knowsAbout: [
+                "AWS Architecture",
+                "Node.js",
+                "TypeScript",
                 "React",
                 "Next.js",
-                "TypeScript",
-                "JavaScript",
-                "Tailwind CSS",
-                "Web Development",
-                "Front-End Development",
+                "System Integrations",
+                "Cloud Computing",
               ],
               address: {
                 "@type": "PostalAddress",
@@ -128,7 +122,7 @@ export default function RootLayout({
               },
               alumniOf: {
                 "@type": "EducationalOrganization",
-                name: "Software Development Degree",
+                name: "Centro de Enseñanza Técnica Industrial",
               },
             }),
           }}
