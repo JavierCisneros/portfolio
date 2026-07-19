@@ -1,296 +1,244 @@
-"use client";
-import Image from "next/image";
-import { TECHNOLOGIES_CONSTANTS } from "./technologies-constants";
-import Link from "next/link";
-import Projects from "../components/Projects";
-import type { Images } from "../components/Projects";
-import { useEffect, useRef } from "react";
-import DarkMode from "../components/DarkMode";
-import SmoothScroll from "@/components/SmoothScroll";
-import { motion } from "framer-motion";
+import DarkMode from "@/components/DarkMode";
+
+const caseStudies = [
+  {
+    number: "01",
+    title: "VA Savings Builder",
+    summary: "A secure, member-facing savings experience for credit unions.",
+    role: "I led the architecture and implementation from technical discovery through production support, coordinating secure integrations across the client, AWS, and third-party platforms.",
+    constraint: "Financial data and authentication crossed multiple platforms. The solution had to remain secure, support production operations, and avoid exposing confidential banking details.",
+    decision: "I designed a lower-cost external-transfer workflow using existing platform capabilities and secure token exchange instead of adding another vendor dependency.",
+    outcome: "Built for an audience of 10,000+ credit union members",
+    flow: ["Member client", "Secure API layer", "Lambda services", "Data and banking platforms"],
+    stack: "React, TypeScript, Node.js, Python, API Gateway, Cognito, DynamoDB",
+  },
+  {
+    number: "02",
+    title: "Q2 / FINOFR RateReset Integration",
+    summary: "An embedded third-party platform launched inside enterprise online banking.",
+    role: "I led the first two production launches, connecting Q2 SDK communication, iframe embedding, and session initialization across multiple environments.",
+    constraint: "The vendor experience ran inside an iframe, while browser privacy protections and iOS restrictions limited third-party session behavior.",
+    decision: "When sessions failed across browsers and iOS, I traced the issue to a third-party cookie dependency and helped drive a change in the vendor's session-handling approach.",
+    outcome: "2 initial production launches",
+    flow: ["Enterprise banking", "Q2 SDK", "Embedded experience", "Vendor platform"],
+    stack: "Q2 SDK, JavaScript, iframe messaging, session security",
+  },
+  {
+    number: "03",
+    title: "Internal Time Tracker",
+    summary: "A serverless operations tool that standardized reporting across time zones.",
+    role: "I designed and delivered the application to replace manual reporting work and give employees a consistent workflow.",
+    constraint: "The platform needed reliable date handling across time zones, controlled access, scheduled automation, and simple ongoing ownership.",
+    decision: "The system used a focused serverless architecture with scheduled workflows and centralized date processing to keep operations simple and reliable.",
+    outcome: "Adopted by 50+ employees",
+    flow: ["Internal client", "Serverless API", "Relational data", "Scheduled workflows"],
+    stack: "React, Vite, Lambda, API Gateway, Cognito, RDS, EventBridge",
+  },
+] as const;
+
+const supportingWork = [
+  ["Treasury check verification", "Integrated a U.S. Treasury API through AWS Lambda to identify mismatched, previously paid, or potentially invalid checks."],
+  ["Production fee remediation", "Built a Python and Lambda process that corrected fee-related records for more than 200 credit union members."],
+  ["Financial operations tools", "Delivered applications for member maintenance, transaction search, share conversion, and loan workflows."],
+  ["Reporting and automation", "Supported scheduled .NET, SQL, and AWS processes for operational reporting and recurring internal workflows."],
+] as const;
 
 export default function Home() {
-  const techStackRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const container = techStackRef.current;
-    if (!container) return;
-
-    const handleWheel = (e: WheelEvent) => {
-      e.preventDefault();
-      container.scrollBy({
-        left: e.deltaY,
-      });
-    };
-
-    container.addEventListener("wheel", handleWheel, { passive: false });
-    return () => container.removeEventListener("wheel", handleWheel);
-  }, []);
-
-  const scrollTechStack = (direction: "left" | "right") => {
-    const container = techStackRef.current;
-    if (!container) return;
-    const scrollAmount = 200; // Adjust as needed
-    container.scrollBy({
-      left: direction === "left" ? -scrollAmount : scrollAmount,
-      behavior: "smooth",
-    });
-  };
-
   return (
-    <SmoothScroll>
-      <main className="relative max-w-4xl m-auto my-16 flex flex-col gap-16 px-6 bg-slate-300 dark:bg-background-dark text-black dark:text-white antialiased">
-        {/* Header Section */}
-        <header className="space-y-8">
-          <div className="flex items-center justify-between">
-            <div className="space-y-2">
-              <h1 className="text-4xl font-bold tracking-tight">
-                Javier Cisneros
-              </h1>
-              <h2 className="text-xl font-medium text-markup">
-                Software Engineer
-              </h2>
-            </div>
-            <div className="flex items-center space-x-4">
-              <DarkMode />
-            </div>
+    <main className="min-h-screen bg-background text-foreground selection:bg-accent selection:text-white">
+      <div className="mx-auto max-w-5xl px-6 md:px-10">
+        <header className="flex items-center justify-between py-7 text-sm">
+          <a href="#top" className="font-semibold tracking-tight">Javier Cisneros</a>
+          <div className="flex items-center gap-5">
+            <nav className="hidden items-center gap-5 text-muted-foreground sm:flex" aria-label="Primary navigation">
+              <a className="transition-colors hover:text-foreground" href="#work">Work</a>
+              <a className="transition-colors hover:text-foreground" href="#approach">Approach</a>
+              <a className="transition-colors hover:text-foreground" href="/resume" target="_blank" rel="noopener noreferrer">Résumé</a>
+              <a className="transition-colors hover:text-foreground" href="#contact">Contact</a>
+            </nav>
+            <DarkMode />
           </div>
-
-          <div className="space-y-4 text-lg leading-relaxed">
-            <p>
-              I&apos;m a full-stack developer based in Guadalajara, Jalisco,
-              with a strong focus on front-end development and scalable web
-              applications. I started studying software development at 16 and
-              graduated with a degree in Software Engineering in June 2024.
-            </p>
-            <p>
-              I have experience building multitenant systems, Progressive Web
-              Apps, and custom tools using modern technologies like React,
-              Next.js, TypeScript, and AWS. I enjoy solving complex
-              architectural challenges by delivering solutions that align with
-              the system&apos;s needs and organizational context, leveraging
-              Infrastructure as Code (IaC) and system design principles. I also
-              focus on optimizing performance and streamlining deployment
-              workflows through CI/CD best practices, using platforms such as
-              AWS CodePipeline and Vercel.
-            </p>
-
-            <p>
-              I&apos;m passionate about learning and constantly improving. I
-              thrive on new challenges and seek opportunities that allow me to
-              grow both technically and professionally.
-            </p>
-          </div>
-
-          {/* Social Links */}
-          <nav
-            className="flex items-center space-x-6"
-            aria-label="Social media links"
-          >
-            <a
-              href="mailto:fjca185@gmail.com"
-              className="group p-3 rounded-lg bg-muted hover:bg-muted/80 transition-all duration-200 hover:scale-105"
-              aria-label="Email"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 512 512"
-                className="w-6 h-6 fill-foreground group-hover:fill-markup transition-colors duration-200"
-              >
-                <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
-              </svg>
-            </a>
-            <a
-              href="https://linkedin.com/in/javiercisnerosavila"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group p-3 rounded-lg bg-muted hover:bg-muted/80 transition-all duration-200 hover:scale-105"
-              aria-label="LinkedIn"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 448 512"
-                className="w-6 h-6 fill-foreground group-hover:fill-markup transition-colors duration-200"
-              >
-                <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" />
-              </svg>
-            </a>
-            <a
-              href="https://github.com/JavierCisneros"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group p-3 rounded-lg bg-muted hover:bg-muted/80 transition-all duration-200 hover:scale-105"
-              aria-label="GitHub"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 496 512"
-                className="w-6 h-6 fill-foreground group-hover:fill-markup transition-colors duration-200"
-              >
-                <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
-              </svg>
-            </a>
-          </nav>
         </header>
 
-        {/* Stack Section */}
-        <section className="space-y-6">
-          <div className="flex items-center space-x-4">
-            <h2 className="text-2xl font-bold text-markup">Tech Stack</h2>
-            <div className="flex-1 h-px bg-black dark:bg-border"></div>
-          </div>
-          <p className="text-lg leading-relaxed text-muted-foreground">
-            I&apos;m focusing on web development with modern technologies like
-            React, Next.js, Tailwind CSS, and more. I&apos;m also studying
-            software architecture, design patterns, and best practices in
-            software development.
-          </p>
-          <motion.div
-            className="relative group"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.3 }}
-          >
-            <div
-              ref={techStackRef}
-              className="flex overflow-x-auto gap-4 p-4 sm:p-6 bg-muted/30 rounded-xl scrollbar-hide scroll-smooth scroll-m-28"
-            >
-              {Object.values(TECHNOLOGIES_CONSTANTS).map(
-                (technology: Images, index: number) => (
-                  <motion.div
-                    key={technology.src}
-                    className="flex flex-col items-center space-y-2 group min-w-[80px] sm:min-w-[100px]"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      duration: 0.2,
-                      delay: index * 0.02, // Reduced delay
-                    }}
-                    whileHover={{
-                      y: -2, // Reduced movement
-                    }}
-                  >
-                    <div className="p-3 sm:p-4 rounded-lg bg-background hover:bg-muted transition-all duration-200 hover:scale-105">
-                      <Image
-                        src={technology.src}
-                        height={technology.height}
-                        width={technology.width}
-                        alt={technology.alt}
-                        className="w-8 h-8 sm:w-10 sm:h-10 group-hover:scale-110 transition-transform duration-200"
-                      />
-                    </div>
-                    <span className="text-xs text-muted-foreground text-center font-medium group-hover:text-foreground transition-colors duration-200">
-                      {technology.alt}
-                    </span>
-                  </motion.div>
-                )
-              )}
+        <section id="top" className="grid min-h-[78vh] content-center gap-10 border-b border-border py-20 md:grid-cols-[1fr_auto] md:items-end">
+          <div>
+            <h1 className="max-w-4xl text-5xl font-semibold tracking-[-0.05em] sm:text-6xl md:text-7xl">Full-Stack Software Engineer</h1>
+            <p className="mt-8 max-w-2xl text-lg leading-8 text-muted-foreground md:text-xl">
+              I design, build, and own cloud-native applications and complex platform integrations using React, TypeScript, Node.js, and AWS.
+            </p>
+            <div className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-4 text-sm font-semibold">
+              <a className="border-b border-foreground pb-1 transition-opacity hover:opacity-60" href="mailto:fjca185@gmail.com">Start a conversation</a>
+              <a className="text-muted-foreground transition-colors hover:text-foreground" href="/resume" target="_blank" rel="noopener noreferrer">View résumé ↗</a>
+              <a className="text-muted-foreground transition-colors hover:text-foreground" href="https://linkedin.com/in/javiercisnerosavila" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+              <a className="text-muted-foreground transition-colors hover:text-foreground" href="https://github.com/JavierCisneros" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
             </div>
-
-            {/* Left Arrow - Only visible on hover */}
-            <button
-              type="button"
-              onClick={() => scrollTechStack("left")}
-              className="absolute left-1 top-1/2 -translate-y-1/2 w-8 h-8 bg-background/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg border border-border opacity-0 group-hover:opacity-100 transition-all duration-200 cursor-pointer z-10 hover:scale-105"
-              aria-label="Scroll left"
-            >
-              <svg
-                className="w-4 h-4 text-muted-foreground"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 19l-7-7 7-7"
-                />
-              </svg>
-            </button>
-
-            {/* Right Arrow - Only visible on hover */}
-            <button
-              type="button"
-              onClick={() => scrollTechStack("right")}
-              className="absolute right-1 top-1/2 -translate-y-1/2 w-8 h-8 bg-background/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg border border-border opacity-0 group-hover:opacity-100 transition-all duration-200 cursor-pointer z-10 hover:scale-105"
-              aria-label="Scroll right"
-            >
-              <svg
-                className="w-4 h-4 text-muted-foreground"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </button>
-          </motion.div>
+          </div>
+          <p className="max-w-64 text-sm leading-6 text-muted-foreground md:text-right">
+            Based in Guadalajara, Mexico. Experienced collaborating remotely with clients, vendors, and engineering teams across North America.
+          </p>
         </section>
 
-        {/* Projects Section */}
-        <section className="space-y-6">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <h2 className="text-2xl font-bold text-markup  ">
-                Featured Projects
-              </h2>
+        <section aria-label="Professional and academic summary" className="border-b border-border py-10 md:py-12">
+          <div className="grid gap-7 md:grid-cols-[2fr_1fr] md:items-center md:gap-12">
+            <p className="max-w-4xl text-lg leading-8 text-muted-foreground md:text-xl">
+              Production experience across member-facing financial applications, internal operations platforms, secure integrations, and AWS serverless systems.
+            </p>
+            <div className="border-t border-border pt-6 md:border-l md:border-t-0 md:py-1 md:pl-8">
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Education</p>
+              <p className="mt-2 font-semibold">B.S. in Software Engineering</p>
+              <p className="mt-1 text-sm text-muted-foreground">CETI, 2024</p>
             </div>
-            <div className="flex-1 h-px bg-black dark:bg-border mx-4"></div>
-            <Link
-              href="/view-projects"
-              className="  inline-flex items-center text-sm font-medium text-markup hover:text-markup/80 transition-colors duration-200"
-            >
-              View All
-              <svg
-                className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </Link>
           </div>
-          <p className="text-lg leading-relaxed text-muted-foreground">
-            Here are some of my recent projects, including personal work and
-            collaborations with other developers.
-          </p>
-          <Projects numberOfElements={4} />
         </section>
 
-        {/* Experience Section */}
-        <section className="space-y-6 mb-48">
-          <div className="flex items-center space-x-4">
-            <h2 className="text-2xl font-bold text-markup">Experience</h2>
-            <div className="flex-1 h-px bg-black dark:bg-border"></div>
+        <section id="work" className="py-24 md:py-32">
+          <div className="mb-20 grid gap-5 md:grid-cols-[1fr_2fr]">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">Selected work</p>
+            <p className="max-w-2xl text-2xl leading-9 tracking-tight md:text-3xl">Production systems where the hard part was not only writing code, but choosing the right architecture and carrying it through.</p>
           </div>
-          <p className="text-lg leading-relaxed text-muted-foreground">
-            Here&apos;s my CV if you want to know more about my experience and
-            background.
-          </p>
-          <div className="rounded-xl overflow-hidden border border-border">
-            <iframe
-              src="https://drive.google.com/file/d/1mCjlyGDZT70K-k8diauDgkIRrGmeB8--/preview"
-              allow="autoplay"
-              height={400}
-              className="w-full"
-            />
+
+          <div>
+            {caseStudies.map((project) => (
+              <article key={project.number} className="grid gap-6 border-t border-border py-12 md:grid-cols-[5rem_1fr_1fr] md:gap-10 md:py-16">
+                <p className="text-sm text-muted-foreground">{project.number}</p>
+                <div>
+                  <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">{project.title}</h2>
+                  <p className="mt-4 text-lg leading-7 text-muted-foreground">{project.summary}</p>
+                  <p className="mt-8 inline-block border-b border-accent pb-2 text-sm font-semibold text-accent">{project.outcome}</p>
+                </div>
+                <div className="space-y-6 text-[0.95rem] leading-7">
+                  <div>
+                    <p className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">Role and problem</p>
+                    <p>{project.role}</p>
+                  </div>
+                  <div>
+                    <p className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">Constraint</p>
+                    <p className="text-muted-foreground">{project.constraint}</p>
+                  </div>
+                  <div>
+                    <p className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">Key decision</p>
+                    <p>{project.decision}</p>
+                  </div>
+                  <div aria-label={`${project.title} simplified architecture`}>
+                    <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">Simplified architecture</p>
+                    <ol className="flex flex-wrap items-center gap-x-2 gap-y-2 text-sm">
+                      {project.flow.map((step, index) => (
+                        <li key={step} className="flex items-center gap-2">
+                          <span>{step}</span>
+                          {index < project.flow.length - 1 && <span aria-hidden="true" className="text-accent">→</span>}
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
+                  <p className="text-sm text-muted-foreground">{project.stack}</p>
+                </div>
+              </article>
+            ))}
           </div>
         </section>
-      </main>
-    </SmoothScroll>
+
+        <section id="approach" className="border-y border-border py-20 md:py-24">
+          <div className="grid gap-12 md:grid-cols-[1fr_2fr]">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">How I work</p>
+              <p className="mt-5 max-w-xs leading-7 text-muted-foreground">I work comfortably in distributed teams and stay involved from the first question through production support.</p>
+            </div>
+            <div className="grid gap-10 sm:grid-cols-3">
+              <div>
+                <h3 className="font-semibold">Own the whole path</h3>
+                <p className="mt-3 text-sm leading-6 text-muted-foreground">Turn ambiguous requirements into architecture, implementation, deployment, and measurable production outcomes.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold">Communicate across boundaries</h3>
+                <p className="mt-3 text-sm leading-6 text-muted-foreground">Work directly with clients, vendors, and platform engineers to resolve dependencies and keep delivery moving.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold">Stay responsible after launch</h3>
+                <p className="mt-3 text-sm leading-6 text-muted-foreground">Coordinate releases, monitor behavior, investigate failures, and improve systems after they reach production.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-b border-border py-20 md:py-24">
+          <div className="grid gap-12 md:grid-cols-[1fr_2fr]">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">More in production</p>
+              <p className="mt-5 max-w-xs leading-7 text-muted-foreground">Smaller systems can still solve expensive, high-risk operational problems.</p>
+            </div>
+            <div className="divide-y divide-border">
+              {supportingWork.map(([title, description]) => (
+                <div key={title} className="grid gap-3 py-7 first:pt-0 last:pb-0 sm:grid-cols-[13rem_1fr]">
+                  <h3 className="font-semibold">{title}</h3>
+                  <p className="text-sm leading-6 text-muted-foreground">{description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="experience" className="grid gap-16 py-24 md:grid-cols-2 md:py-32">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">Capabilities</p>
+            <p className="mt-6 max-w-md text-2xl leading-9 tracking-tight">Strongest at the intersection of product delivery, secure integrations, and AWS architecture.</p>
+            <div className="mt-10 space-y-5 text-sm leading-7 text-muted-foreground">
+              <p><strong className="text-foreground">Cloud:</strong> Lambda, API Gateway, Cognito, DynamoDB, RDS, EventBridge, VPC, serverless architecture</p>
+              <p><strong className="text-foreground">Application:</strong> React, Next.js, TypeScript, Node.js, REST APIs</p>
+              <p><strong className="text-foreground">Additional:</strong> Python, C#/.NET, SQL, IaC, CI/CD</p>
+            </div>
+          </div>
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">Experience</p>
+            <div className="mt-6 divide-y divide-border border-t border-border">
+              <div className="py-7">
+                <div className="flex justify-between gap-5"><h3 className="font-semibold">TekChoice</h3><span className="text-sm text-muted-foreground">2024 to present</span></div>
+                <p className="mt-2 text-sm text-muted-foreground">Full-Stack Software Engineer</p>
+              </div>
+              <div className="py-7">
+                <div className="flex justify-between gap-5"><h3 className="font-semibold">Tianguiza</h3><span className="text-sm text-muted-foreground">2023 to 2024</span></div>
+                <p className="mt-2 text-sm text-muted-foreground">Independent academic project</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="education" className="border-y border-border py-20 md:py-24">
+          <div className="grid gap-12 md:grid-cols-[1fr_2fr]">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">Education &amp; credentials</p>
+              <p className="mt-5 max-w-xs leading-7 text-muted-foreground">Formal software engineering training reinforced by current cloud certification and production ownership.</p>
+            </div>
+            <div>
+              <div className="grid gap-4 sm:grid-cols-[1fr_auto] sm:items-start">
+                <div>
+                  <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">B.S. in Software Engineering</h2>
+                  <p className="mt-4 text-lg text-muted-foreground">Centro de Enseñanza Técnica Industrial (CETI)</p>
+                </div>
+                <span className="text-sm text-muted-foreground">Graduated 2024</span>
+              </div>
+              <div className="mt-10 border-t border-border pt-7">
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">Professional certification</p>
+                <h3 className="mt-3 text-lg font-semibold">AWS Certified Cloud Practitioner</h3>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" className="py-24 md:py-32">
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">Let&apos;s work together</p>
+          <h2 className="mt-6 max-w-3xl text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">Looking for an engineer who can own the whole path to production?</h2>
+          <p className="mt-7 max-w-xl text-lg leading-8 text-muted-foreground">I&apos;m open to remote full-time and contractor opportunities with international teams.</p>
+          <div className="mt-10 flex flex-wrap gap-x-8 gap-y-4 font-semibold">
+            <a className="border-b border-foreground pb-2 transition-opacity hover:opacity-60" href="mailto:fjca185@gmail.com">fjca185@gmail.com</a>
+            <a className="border-b border-foreground pb-2 transition-opacity hover:opacity-60" href="/resume" target="_blank" rel="noopener noreferrer">View résumé ↗</a>
+          </div>
+        </section>
+
+        <footer className="flex flex-col gap-3 border-t border-border py-7 text-sm text-muted-foreground sm:flex-row sm:justify-between">
+          <p>© {new Date().getFullYear()} Javier Cisneros</p>
+          <p>Based in Guadalajara, Mexico</p>
+        </footer>
+      </div>
+    </main>
   );
 }
