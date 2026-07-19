@@ -11,7 +11,7 @@ const caseStudies = [
     stack: "React, TypeScript, Node.js, Python, API Gateway, Cognito, DynamoDB",
   },
   {
-    title: "Embedded online banking integration",
+    title: "Embedded Online Banking Integration",
     summary: "A third-party financial product embedded in an existing online banking application.",
     role: "I led the production launches, managed the authentication workflow connecting the online banking platform with the embedded application.",
     constraint: "The product ran in an iframe, and third-party cookie restrictions broke session creation in some browsers, particularly on Apple devices due to the use of apple webkit and other browser restrictions on third-party cookies.",
@@ -20,7 +20,7 @@ const caseStudies = [
     stack: "Q2 SDK, JavaScript, iframe messaging, server-side rendering",
   },
   {
-    title: "Time reporting application",
+    title: "Time Reporting Application",
     summary: "A serverless application that replaced manual time reporting for more than 50 employees.",
     role: "I built the application and moved the team from manual reports to one shared workflow.",
     constraint: "Employees worked across time zones, different countries, and different roles, needed of a stadarized report workflow to reduce manual work, needed to create a workflow that could reduce the reporting time by a 66%.",
