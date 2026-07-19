@@ -193,10 +193,12 @@ export default function Home() {
               <div className="py-7">
                 <div className="flex justify-between gap-5"><h3 className="font-semibold">TekChoice</h3><span className="text-sm text-muted-foreground">2024 to present</span></div>
                 <p className="mt-2 text-sm text-muted-foreground">Full-Stack Software Engineer</p>
+                <a className="mt-3 inline-block border-b border-border pb-1 text-sm transition-colors hover:border-foreground" href="https://tekchoice.com" target="_blank" rel="noopener noreferrer">Company website</a>
               </div>
               <div className="py-7">
                 <div className="flex justify-between gap-5"><h3 className="font-semibold">Tianguiza</h3><span className="text-sm text-muted-foreground">2023 to 2024</span></div>
                 <p className="mt-2 text-sm text-muted-foreground">Independent academic project</p>
+                <a className="mt-3 inline-block border-b border-border pb-1 text-sm transition-colors hover:border-foreground" href="https://tianguiza.com" target="_blank" rel="noopener noreferrer">Visit Tianguiza</a>
               </div>
             </div>
           </div>
