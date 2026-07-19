@@ -3,7 +3,7 @@ import DarkMode from "@/components/DarkMode";
 const caseStudies = [
   {
     number: "01",
-    title: "VA Savings Builder",
+    title: "Protected Savings",
     summary: "A secure, member-facing savings experience for credit unions.",
     role: "I led the architecture and implementation from technical discovery through production support, coordinating secure integrations across the client, AWS, and third-party platforms.",
     constraint: "Financial data and authentication crossed multiple platforms. The solution had to remain secure, support production operations, and avoid exposing confidential banking details.",
