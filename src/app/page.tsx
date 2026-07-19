@@ -67,7 +67,7 @@ export default function Home() {
               I design, build, and own cloud-native applications and complex platform integrations using React, TypeScript, Node.js, and AWS.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-4 text-sm font-semibold">
-              <a className="border-b border-foreground pb-1 transition-opacity hover:opacity-60" href="mailto:fjca185@gmail.com">Start a conversation</a>
+              <a className="border-b border-foreground pb-1 transition-opacity hover:opacity-60" href="mailto:hi@javiercisneros.me">Start a conversation</a>
               <a className="text-muted-foreground transition-colors hover:text-foreground" href="/resume" target="_blank" rel="noopener noreferrer">View résumé</a>
               <a className="text-muted-foreground transition-colors hover:text-foreground" href="https://linkedin.com/in/javiercisnerosavila" target="_blank" rel="noopener noreferrer">LinkedIn</a>
               <a className="text-muted-foreground transition-colors hover:text-foreground" href="https://github.com/JavierCisneros" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -231,7 +231,7 @@ export default function Home() {
           <h2 className="max-w-3xl text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">Contact me.</h2>
           <p className="mt-7 max-w-xl text-lg leading-8 text-muted-foreground">The easiest way to reach me is by email.</p>
           <div className="mt-10 flex flex-wrap gap-x-8 gap-y-4 font-semibold">
-            <a className="border-b border-foreground pb-2 transition-opacity hover:opacity-60" href="mailto:fjca185@gmail.com">fjca185@gmail.com</a>
+            <a className="border-b border-foreground pb-2 transition-opacity hover:opacity-60" href="mailto:hi@javiercisneros.me">hi@javiercisneros.me</a>
             <a className="border-b border-foreground pb-2 transition-opacity hover:opacity-60" href="/resume" target="_blank" rel="noopener noreferrer">Résumé</a>
           </div>
         </section>

@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Javier Cisneros — Portfolio
 
-## Getting Started
+The source for [javiercisneros.me](https://javiercisneros.me), my portfolio as a full-stack software engineer working across cloud-native applications, secure platform integrations, and production operations.
 
-First, run the development server:
+The site focuses on the engineering decisions and outcomes behind my commercial work. Most production source code belongs to private organization repositories, so the case studies explain the architecture, constraints, and ownership without exposing client code or confidential details.
+
+## Selected work
+
+- A member-facing savings application built for an audience of more than 10,000 credit union members.
+- The first two production launches of an embedded Q2 online-banking integration.
+- A serverless internal operations platform adopted by more than 50 employees.
+- AWS and Python workflows for financial operations, reporting, verification, and production remediation.
+
+[Read the case studies](https://javiercisneros.me/#work)
+
+## Public project
+
+[Tianguiza](https://tianguiza.com) is the primary project that can be explored publicly. The portfolio intentionally does not link to login-only client systems that would provide little useful context to a reviewer.
+
+## Stack
+
+Next.js, React, TypeScript, Tailwind CSS, Vercel Analytics, and Vercel Speed Insights.
+
+## Local development
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+For a production check:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+pnpm build
+```
 
-## Learn More
+## Contact
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[Email](mailto:hi@javiercisneros.me) · [LinkedIn](https://www.linkedin.com/in/javiercisnerosavila) · [Résumé](https://javiercisneros.me/resume)

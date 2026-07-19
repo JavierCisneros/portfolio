@@ -101,6 +101,7 @@ export default function RootLayout({
               description:
                 "Full-Stack Software Engineer focused on cloud-native applications, AWS architecture, and complex platform integrations.",
               url: "https://javiercisneros.me",
+              email: "mailto:hi@javiercisneros.me",
               sameAs: [
                 "https://linkedin.com/in/javiercisnerosavila",
                 "https://github.com/JavierCisneros",
