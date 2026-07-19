@@ -68,9 +68,9 @@ export default function Home() {
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-4 text-sm font-semibold">
               <a className="border-b border-foreground pb-1 transition-opacity hover:opacity-60" href="mailto:fjca185@gmail.com">Start a conversation</a>
-              <a className="text-muted-foreground transition-colors hover:text-foreground" href="/resume" target="_blank" rel="noopener noreferrer">View résumé ↗</a>
-              <a className="text-muted-foreground transition-colors hover:text-foreground" href="https://linkedin.com/in/javiercisnerosavila" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-              <a className="text-muted-foreground transition-colors hover:text-foreground" href="https://github.com/JavierCisneros" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+              <a className="text-muted-foreground transition-colors hover:text-foreground" href="/resume" target="_blank" rel="noopener noreferrer">View résumé</a>
+              <a className="text-muted-foreground transition-colors hover:text-foreground" href="https://linkedin.com/in/javiercisnerosavila" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a className="text-muted-foreground transition-colors hover:text-foreground" href="https://github.com/JavierCisneros" target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
           </div>
           <p className="max-w-64 text-sm leading-6 text-muted-foreground md:text-right">
@@ -230,7 +230,7 @@ export default function Home() {
           <p className="mt-7 max-w-xl text-lg leading-8 text-muted-foreground">I&apos;m open to remote full-time and contractor opportunities with international teams.</p>
           <div className="mt-10 flex flex-wrap gap-x-8 gap-y-4 font-semibold">
             <a className="border-b border-foreground pb-2 transition-opacity hover:opacity-60" href="mailto:fjca185@gmail.com">fjca185@gmail.com</a>
-            <a className="border-b border-foreground pb-2 transition-opacity hover:opacity-60" href="/resume" target="_blank" rel="noopener noreferrer">View résumé ↗</a>
+            <a className="border-b border-foreground pb-2 transition-opacity hover:opacity-60" href="/resume" target="_blank" rel="noopener noreferrer">View résumé</a>
           </div>
         </section>
 
