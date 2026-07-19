@@ -225,12 +225,11 @@ export default function Home() {
         </section>
 
         <section id="contact" className="py-24 md:py-32">
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">Let&apos;s work together</p>
-          <h2 className="mt-6 max-w-3xl text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">Looking for an engineer who can own the whole path to production?</h2>
-          <p className="mt-7 max-w-xl text-lg leading-8 text-muted-foreground">I&apos;m open to remote full-time and contractor opportunities with international teams.</p>
+          <h2 className="max-w-3xl text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">Contact me.</h2>
+          <p className="mt-7 max-w-xl text-lg leading-8 text-muted-foreground">The easiest way to reach me is by email.</p>
           <div className="mt-10 flex flex-wrap gap-x-8 gap-y-4 font-semibold">
             <a className="border-b border-foreground pb-2 transition-opacity hover:opacity-60" href="mailto:fjca185@gmail.com">fjca185@gmail.com</a>
-            <a className="border-b border-foreground pb-2 transition-opacity hover:opacity-60" href="/resume" target="_blank" rel="noopener noreferrer">View résumé</a>
+            <a className="border-b border-foreground pb-2 transition-opacity hover:opacity-60" href="/resume" target="_blank" rel="noopener noreferrer">Résumé</a>
           </div>
         </section>
 
