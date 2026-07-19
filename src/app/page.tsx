@@ -221,6 +221,7 @@ export default function Home() {
               <div className="mt-10 border-t border-border pt-7">
                 <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">Professional certification</p>
                 <h3 className="mt-3 text-lg font-semibold">AWS Certified Cloud Practitioner</h3>
+                <a className="mt-3 inline-block border-b border-border pb-1 text-sm transition-colors hover:border-foreground" href="https://www.credly.com/badges/be3a5594-9c7d-402b-aeda-e10403a388fd/linked_in_profile" target="_blank" rel="noopener noreferrer">Verify credential</a>
               </div>
             </div>
           </div>
