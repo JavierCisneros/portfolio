@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://javiercisneros.me"),
+  metadataBase: new URL("https://www.javiercisneros.me"),
   alternates: {
     canonical: "/",
   },
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     title: "Javier Cisneros | Full-Stack Software Engineer",
     description:
       "Cloud-native applications, secure integrations, and end-to-end production ownership with React, TypeScript, Node.js, and AWS.",
-    url: "https://javiercisneros.me",
+    url: "https://www.javiercisneros.me",
     siteName: "Javier Cisneros Portfolio",
     images: [
       {
@@ -94,37 +94,55 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Person",
-              name: "Francisco Javier Cisneros Avila",
-              alternateName: "Javier Cisneros",
-              jobTitle: "Full-Stack Software Engineer",
-              description:
-                "Full-Stack Software Engineer focused on cloud-native applications, AWS architecture, and complex platform integrations.",
-              url: "https://javiercisneros.me",
-              email: "mailto:hi@javiercisneros.me",
-              sameAs: [
-                "https://linkedin.com/in/javiercisnerosavila",
-                "https://github.com/JavierCisneros",
+              "@graph": [
+                {
+                  "@type": "WebSite",
+                  "@id": "https://www.javiercisneros.me/#website",
+                  url: "https://www.javiercisneros.me",
+                  name: "Javier Cisneros",
+                  inLanguage: "en",
+                  publisher: {
+                    "@id": "https://www.javiercisneros.me/#person",
+                  },
+                },
+                {
+                  "@type": "Person",
+                  "@id": "https://www.javiercisneros.me/#person",
+                  name: "Francisco Javier Cisneros Avila",
+                  alternateName: "Javier Cisneros",
+                  jobTitle: "Full-Stack Software Engineer",
+                  description:
+                    "Full-Stack Software Engineer focused on cloud-native applications, AWS architecture, and complex platform integrations.",
+                  url: "https://www.javiercisneros.me",
+                  email: "mailto:hi@javiercisneros.me",
+                  mainEntityOfPage: {
+                    "@id": "https://www.javiercisneros.me/#website",
+                  },
+                  sameAs: [
+                    "https://linkedin.com/in/javiercisnerosavila",
+                    "https://github.com/JavierCisneros",
+                  ],
+                  knowsAbout: [
+                    "AWS Architecture",
+                    "Node.js",
+                    "TypeScript",
+                    "React",
+                    "Next.js",
+                    "System Integrations",
+                    "Cloud Computing",
+                  ],
+                  address: {
+                    "@type": "PostalAddress",
+                    addressLocality: "Guadalajara",
+                    addressRegion: "Jalisco",
+                    addressCountry: "MX",
+                  },
+                  alumniOf: {
+                    "@type": "EducationalOrganization",
+                    name: "Centro de Enseñanza Técnica Industrial",
+                  },
+                },
               ],
-              knowsAbout: [
-                "AWS Architecture",
-                "Node.js",
-                "TypeScript",
-                "React",
-                "Next.js",
-                "System Integrations",
-                "Cloud Computing",
-              ],
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Guadalajara",
-                addressRegion: "Jalisco",
-                addressCountry: "MX",
-              },
-              alumniOf: {
-                "@type": "EducationalOrganization",
-                name: "Centro de Enseñanza Técnica Industrial",
-              },
             }),
           }}
         />

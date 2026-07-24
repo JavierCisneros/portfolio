@@ -20,10 +20,17 @@ export async function generateMetadata({
   return {
     title: project.title,
     description: project.description,
+    alternates: {
+      canonical: `/view-projects/${id}`,
+    },
+    robots: {
+      index: false,
+      follow: true,
+    },
     openGraph: {
       title: `${project.title} - Javier Cisneros`,
       description: project.description,
-      url: `https://javiercisneros.me/view-projects/${id}`,
+      url: `https://www.javiercisneros.me/view-projects/${id}`,
     },
   };
 }

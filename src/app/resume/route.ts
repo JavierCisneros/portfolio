@@ -16,6 +16,7 @@ export async function GET() {
         "Content-Type": "application/pdf",
         "Content-Disposition": 'inline; filename="Javier-Cisneros-Resume.pdf"',
         "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400",
+        "X-Robots-Tag": "noindex, nofollow, noarchive",
       },
     });
   } catch {
