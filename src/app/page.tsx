@@ -156,7 +156,7 @@ export default function Home() {
           <p className="mt-7 max-w-xl text-lg leading-8 text-muted-foreground">The easiest way to reach me is by email.</p>
           <div className="mt-10 flex flex-wrap gap-x-8 gap-y-4 font-semibold">
             <a className="border-b border-foreground pb-2 transition-opacity hover:opacity-60" href="mailto:hi@javiercisneros.me">hi@javiercisneros.me</a>
-            <a className="border-b border-foreground pb-2 transition-opacity hover:opacity-60" href="/resume" target="_blank" rel="noopener noreferrer">Résumé</a>
+            <a className="border-b border-foreground pb-2 transition-opacity hover:opacity-60" href="/resume" target="_blank" rel="noopener noreferrer">Resume</a>
           </div>
         </section>
 
