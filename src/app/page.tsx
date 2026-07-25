@@ -1,37 +1,6 @@
 import DarkMode from "@/components/DarkMode";
-
-const caseStudies = [
-  {
-    title: "Savings App",
-    summary: "A savings application built for more than 10,000 credit union members.",
-    role: "I took the application from technical discovery through production support, working across the client, AWS, and core banking systems.",
-    constraint: "Authentication and financial data had to move between several systems: our application, the external online banking platform, and the core banking system.",
-    decision: "I used Cognito to manage authentication and authorization across the systems connected to the application.",
-    flow: ["Banno (Online Banking)", "Savings App", "Internal API", "Core Banking System"],
-    result: "I built a cross-platform application that promotes savings within online banking while meeting compliance and security requirements across the connected banking systems.",
-    stack: "React, TypeScript, Node.js, Python, API Gateway, Cognito, DynamoDB",
-  },
-  {
-    title: "Embedded Online Banking Integration",
-    summary: "A third-party financial product embedded in an existing online banking application.",
-    role: "I led the production launches and managed the authentication workflow between the online banking platform and the embedded application.",
-    constraint: "The product ran in an iframe, and third-party cookie restrictions broke session creation in some browsers, particularly on Apple devices using WebKit.",
-    decision: "I reproduced the failures across browsers, traced them to the cookie dependency, and worked with the vendor to change how sessions were created. I also advised the vendor on authentication for their server-side rendered application.",
-    flow: ["Online Banking (Q2)", "Q2 SDK", "Embedded Application", "Vendor Application"],
-    result: "I integrated the third-party product into the online banking platform and worked around cookie restrictions with a different authentication and session management approach.",
-    stack: "Python, HTML, CSS, JavaScript, Server-side Rendering, iframe messaging",
-  },
-  {
-    title: "Time Reporting Application",
-    summary: "A serverless application that replaced manual time reporting for more than 50 employees.",
-    role: "I built the application and moved the team from manual reports to one shared workflow.",
-    constraint: "Employees worked across time zones, countries, and roles. The team needed a standardized reporting workflow that would reduce reporting time by 66%.",
-    decision: "Rather than recreating each department's manual process, we designed one centralized workflow with the stakeholders and employees who would use it. Employees entered time through a weekly interface, while project managers, accounting, and leadership received the level of detail required for approvals, billing, and financial reporting.",
-    flow: ["Employees", "Time App", "Project Managers", "Managers", "Accounting", "Billing", "Executive Leadership"],
-    result: "I created a centralized time-reporting workflow that reduced manual reporting time by 50% at launch and 75% within six months while improving accuracy and reducing errors.",
-    stack: "React, Node.js, Cognito, AWS Lambda, API Gateway, RDS, PostgreSQL, AWS",
-  },
-] as const;
+import { caseStudies } from "@/content/case-studies";
+import Link from "next/link";
 
 const supportingWork = [
   ["Treasury check verification", "Integrated a U.S. Treasury API through AWS Lambda to identify mismatched, previously paid, or potentially invalid checks."],
@@ -82,11 +51,17 @@ export default function Home() {
           </div>
 
           <div>
-            {caseStudies.map((project) => (
+            {caseStudies.map(({ frontmatter: project }) => (
               <article key={project.title} className="grid gap-10 border-t border-border py-12 md:grid-cols-2 md:gap-14 md:py-16">
                 <div>
                   <h3 className="text-2xl font-semibold tracking-tight md:text-3xl">{project.title}</h3>
                   <p className="mt-4 text-lg leading-7 text-muted-foreground">{project.summary}</p>
+                  <Link
+                    href={`/case-studies/${project.slug}`}
+                    className="mt-6 inline-block border-b border-foreground pb-1 text-sm font-semibold transition-opacity hover:opacity-60"
+                  >
+                    Read case study
+                  </Link>
                 </div>
                 <div className="space-y-6 text-[0.95rem] leading-7">
                   <p>{project.role}</p>
@@ -103,7 +78,7 @@ export default function Home() {
                     </ol>
                     {project.result && <p className="text-sm text-muted-foreground mt-4">{project.result}</p>}
                   </div>
-                  <p className="text-sm text-muted-foreground">{project.stack}</p>
+                  <p className="text-sm text-muted-foreground">{project.stack.join(", ")}</p>
                 </div>
               </article>
             ))}
@@ -148,7 +123,7 @@ export default function Home() {
               <div className="py-7">
                 <div className="flex justify-between gap-5"><h3 className="font-semibold">Tianguiza</h3><span className="text-sm text-muted-foreground">2023 to 2024</span></div>
                 <p className="mt-2 text-sm text-muted-foreground">Independent academic project</p>
-                <a className="mt-3 inline-block border-b border-border pb-1 text-sm transition-colors hover:border-foreground" href="https://tianguiza.com" target="_blank" rel="noopener noreferrer">Visit Tianguiza</a>
+                <Link className="mt-3 inline-block border-b border-border pb-1 text-sm transition-colors hover:border-foreground" href="/case-studies/tianguiza">Read case study</Link>
               </div>
             </div>
           </div>

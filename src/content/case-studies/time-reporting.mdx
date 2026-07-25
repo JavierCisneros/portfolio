@@ -1,0 +1,57 @@
+export const frontmatter = {
+  slug: "time-reporting",
+  title: "Time reporting for 50+ employees",
+  summary:
+    "A serverless application that replaced manual time reporting for more than 50 employees.",
+  role:
+    "I built the application and moved the team from separate manual reports to one shared workflow.",
+  constraint:
+    "Employees worked across time zones, countries, and roles. Project managers, accounting, billing, and leadership each needed a different level of reporting detail.",
+  decision:
+    "Rather than reproduce each department's manual process, I worked with stakeholders and employees to define one centralized weekly workflow.",
+  flow: [
+    "Employees",
+    "Time application",
+    "Project managers",
+    "Accounting and billing",
+    "Leadership",
+  ],
+  result:
+    "The application reduced manual reporting time by 50% at launch and by 75% within six months while reducing errors and improving reporting accuracy.",
+  stack: [
+    "React",
+    "Node.js",
+    "Cognito",
+    "AWS Lambda",
+    "API Gateway",
+    "RDS",
+    "PostgreSQL",
+  ],
+  updatedAt: "2026-07-24",
+}
+
+## My role
+
+<p>{frontmatter.role}</p>
+
+## The constraint
+
+<p>{frontmatter.constraint}</p>
+
+The difficult part wasn't the weekly form. It was replacing several department-specific processes without losing the information required for approvals, billing, and financial reporting.
+
+## The decision
+
+<p>{frontmatter.decision}</p>
+
+<ArchitectureFlow steps={frontmatter.flow} />
+
+Employees entered time through one interface. The application then presented the appropriate detail to each downstream group instead of asking employees to maintain several versions of the same report.
+
+## Outcome
+
+<p>{frontmatter.result}</p>
+
+## Stack
+
+<p>{frontmatter.stack.join(", ")}</p>

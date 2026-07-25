@@ -1,0 +1,55 @@
+export const frontmatter = {
+  slug: "embedded-banking",
+  title: "Embedded online banking integration",
+  summary:
+    "A third-party financial product embedded inside an existing online banking application.",
+  role:
+    "I led the production launches and managed the authentication workflow between the online banking platform and the embedded application.",
+  constraint:
+    "The product ran in an iframe, and third-party cookie restrictions broke session creation in some browsers, particularly on Apple devices using WebKit.",
+  decision:
+    "I reproduced the failures across browsers, traced them to the cookie dependency, and worked with the vendor to change how sessions were created. I also advised the vendor on authentication for its server-rendered application.",
+  flow: [
+    "Online banking",
+    "Platform SDK",
+    "Embedded application",
+    "Vendor service",
+  ],
+  result:
+    "The product launched inside online banking with an authentication and session approach that didn't depend on third-party cookies.",
+  stack: [
+    "Python",
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Server-side rendering",
+    "iframe messaging",
+  ],
+  updatedAt: "2026-07-24",
+}
+
+## My role
+
+<p>{frontmatter.role}</p>
+
+## The constraint
+
+<p>{frontmatter.constraint}</p>
+
+The initial implementation worked in some environments but failed where browsers restricted third-party cookies. That made the issue look inconsistent until the behavior was compared across browser engines and device types.
+
+## The decision
+
+<p>{frontmatter.decision}</p>
+
+<ArchitectureFlow steps={frontmatter.flow} />
+
+The important change was moving session creation away from a browser behavior the embedded application couldn't reliably control.
+
+## Outcome
+
+<p>{frontmatter.result}</p>
+
+## Stack
+
+<p>{frontmatter.stack.join(", ")}</p>

@@ -1,0 +1,56 @@
+export const frontmatter = {
+  slug: "savings-platform",
+  title: "Savings platform for 10,000+ members",
+  summary:
+    "A cross-platform savings application designed for a credit union serving more than 10,000 members.",
+  role:
+    "I took the application from technical discovery through production support, working across the client, AWS, online banking, and core banking systems.",
+  constraint:
+    "Authentication and financial data had to move between our application, an external online banking platform, internal APIs, and the core banking system.",
+  decision:
+    "I used Cognito as the authentication and authorization boundary for the systems connected to the application.",
+  flow: [
+    "Online banking",
+    "Savings application",
+    "Internal API",
+    "Core banking",
+  ],
+  result:
+    "The application brought savings functionality into online banking while meeting the security and compliance requirements of the connected financial systems.",
+  stack: [
+    "React",
+    "TypeScript",
+    "Node.js",
+    "Python",
+    "API Gateway",
+    "Cognito",
+    "DynamoDB",
+  ],
+  updatedAt: "2026-07-24",
+}
+
+## My role
+
+<p>{frontmatter.role}</p>
+
+## The constraint
+
+<p>{frontmatter.constraint}</p>
+
+The application couldn't treat authentication as a concern inside one frontend. Each connected system had its own responsibilities, and access to financial data had to remain controlled as requests crossed those boundaries.
+
+## The decision
+
+<p>{frontmatter.decision}</p>
+
+<ArchitectureFlow steps={frontmatter.flow} />
+
+The goal was to keep the application boundary clear: online banking started the member journey, the savings application handled the product experience, and internal services controlled access to core banking data.
+
+## Outcome
+
+<p>{frontmatter.result}</p>
+
+## Stack
+
+<p>{frontmatter.stack.join(", ")}</p>

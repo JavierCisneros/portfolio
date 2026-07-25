@@ -6,7 +6,7 @@ The site focuses on the engineering decisions and outcomes behind my commercial 
 
 ## Selected work
 
-- A member-facing savings application built for an audience of more than 10,000 credit union members.
+- A member-facing savings application built for an audience of more than 6,000 credit union members.
 - The first two production launches of an embedded Q2 online-banking integration.
 - A serverless internal operations platform adopted by more than 50 employees.
 - AWS and Python workflows for financial operations, reporting, verification, and production remediation.
@@ -20,6 +20,21 @@ The site focuses on the engineering decisions and outcomes behind my commercial 
 ## Stack
 
 Next.js, React, TypeScript, Tailwind CSS, Vercel Analytics, and Vercel Speed Insights.
+
+## Editing content
+
+Professional case studies live in `src/content/case-studies/*.mdx`. Each file
+exports a `frontmatter` object used by the homepage, route metadata, and
+sitemap, followed by the full case-study content in MDX.
+
+To add a case study:
+
+1. Copy an existing file in `src/content/case-studies`.
+2. Give it a unique `slug` and update its content.
+3. Import it in `src/content/case-studies/index.ts`.
+
+The route, homepage link, metadata, and sitemap entry are then generated from
+the same content source.
 
 ## Local development
 

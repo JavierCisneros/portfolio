@@ -1,0 +1,74 @@
+export const frontmatter = {
+  slug: "tianguiza",
+  label: "Independent project",
+  title: "Tianguiza: mapping Guadalajara's street markets",
+  summary:
+    "A public Progressive Web App for finding street markets by location, day, and category.",
+  role:
+    "I worked on a three-person team and built the search, category filters, vendor and market registration forms, and OpenStreetMap integration. I also handled the Vercel and Neon deployments.",
+  constraint:
+    "Information about street markets was fragmented across informal sources. The application needed to organize locations, schedules, categories, markets, and vendors without making discovery feel like a database search.",
+  decision:
+    "We used a relational PostgreSQL model for the market data and combined filters with an OpenStreetMap interface so people could search by how they actually choose a market: place, day, or category.",
+  flow: [
+    "Residents and visitors",
+    "Search and filters",
+    "Market records",
+    "OpenStreetMap",
+  ],
+  result:
+    "We shipped the application as a responsive PWA, deployed it publicly, and distributed it through Google Play.",
+  stack: [
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Tailwind CSS",
+    "PostgreSQL",
+    "Drizzle ORM",
+    "OpenStreetMap",
+    "React Leaflet",
+  ],
+  images: [
+    { src: "/images/tianguiz/tianguiza.png", height: 1080, width: 1920, alt: "Tianguiza home page" },
+    { src: "/images/tianguiz/tianguiza-1.png", height: 1080, width: 1920, alt: "Tianguiza search interface" },
+    { src: "/images/tianguiz/tianguiza-2.png", height: 1080, width: 1920, alt: "Tianguiza market details" },
+    { src: "/images/tianguiz/tianguiza-3.png", height: 1080, width: 1920, alt: "Tianguiza vendor interface" },
+    { src: "/images/tianguiz/tianguiza-4.png", height: 1080, width: 1920, alt: "Tianguiza map interface" },
+  ],
+  links: [
+    { type: "Visit Tianguiza", link: "https://tianguiza.com" },
+    {
+      type: "Google Play",
+      link: "https://play.google.com/store/apps/details?id=com.tianguiza.twa&pcampaignid=web_share",
+    },
+  ],
+  updatedAt: "2026-07-24",
+}
+
+## My role
+
+<p>{frontmatter.role}</p>
+
+## The problem
+
+<p>{frontmatter.constraint}</p>
+
+## The decision
+
+<p>{frontmatter.decision}</p>
+
+<ArchitectureFlow steps={frontmatter.flow} />
+
+The map wasn't added as decoration. It gave location results a useful spatial context while the filters handled schedules and categories.
+
+## Outcome
+
+<p>{frontmatter.result}</p>
+
+<ProjectLinks links={frontmatter.links} />
+
+<ProjectGallery images={frontmatter.images} />
+
+## Stack
+
+<p>{frontmatter.stack.join(", ")}</p>
