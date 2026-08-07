@@ -62,6 +62,14 @@ export default function JcaRangeLabPage() {
             </a>
             <a
               className="border-b border-foreground pb-1 font-semibold transition-opacity hover:opacity-60"
+              href="https://github.com/JavierCisneros/jca-range-calendar"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              GitHub repository
+            </a>
+            <a
+              className="border-b border-foreground pb-1 font-semibold transition-opacity hover:opacity-60"
               href="https://jca-range-calendar.vercel.app/playground"
               rel="noopener noreferrer"
               target="_blank"
