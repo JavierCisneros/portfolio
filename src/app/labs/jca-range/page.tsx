@@ -60,7 +60,14 @@ export default function JcaRangeLabPage() {
             >
               GitHub repository
             </a>
-            <span className="text-muted-foreground">Live demo — coming soon</span>
+            <a
+              className="border-b border-foreground pb-1 font-semibold transition-opacity hover:opacity-60"
+              href="https://jca-range-calendar.vercel.app/playground"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Live demo
+            </a>
             <span className="text-muted-foreground">npm — coming soon</span>
           </div>
 
