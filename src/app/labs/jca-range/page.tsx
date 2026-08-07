@@ -54,11 +54,11 @@ export default function JcaRangeLabPage() {
           <div className="mt-12 flex flex-wrap gap-x-7 gap-y-3 text-sm">
             <a
               className="border-b border-foreground pb-1 font-semibold transition-opacity hover:opacity-60"
-              href="https://github.com/JavierCisneros/jca-range-calendar"
+              href="https://www.npmjs.com/package/jca-range"
               rel="noopener noreferrer"
               target="_blank"
             >
-              GitHub repository
+              View npm package
             </a>
             <a
               className="border-b border-foreground pb-1 font-semibold transition-opacity hover:opacity-60"
@@ -68,7 +68,6 @@ export default function JcaRangeLabPage() {
             >
               Live demo
             </a>
-            <span className="text-muted-foreground">npm — coming soon</span>
           </div>
 
           <section className="mt-20 border-y border-border py-10">
