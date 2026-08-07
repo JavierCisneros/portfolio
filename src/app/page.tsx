@@ -9,6 +9,15 @@ const supportingWork = [
   ["Reporting and automation", "Maintained scheduled AWS jobs for reports and recurring internal work, using .NET and MySQL connected to Snowflake."],
 ] as const;
 
+const personalLabs = [
+  {
+    title: "JCA Range",
+    description:
+      "A React date-range field with deliberate selection rules, typed input, and styling hooks.",
+    href: "/labs/jca-range",
+  },
+] as const;
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-background text-foreground selection:bg-accent selection:text-white">
@@ -89,13 +98,27 @@ export default function Home() {
           <div className="grid gap-12 md:grid-cols-[1fr_2fr]">
             <div>
               <h2 className="text-lg font-semibold text-accent">Other work</h2>
-              <p className="mt-5 max-w-xs leading-7 text-muted-foreground">Smaller production systems I've built or maintained.</p>
+              <p className="mt-5 max-w-xs leading-7 text-muted-foreground">Smaller systems and tools I've built or maintained.</p>
             </div>
             <div className="divide-y divide-border">
               {supportingWork.map(([title, description]) => (
                 <div key={title} className="grid gap-3 py-7 first:pt-0 last:pb-0 sm:grid-cols-[13rem_1fr]">
                   <h3 className="font-semibold">{title}</h3>
                   <p className="text-sm leading-6 text-muted-foreground">{description}</p>
+                </div>
+              ))}
+              {personalLabs.map((lab) => (
+                <div key={lab.title} className="grid gap-3 py-7 first:pt-0 last:pb-0 sm:grid-cols-[13rem_1fr]">
+                  <h3 className="font-semibold">{lab.title}</h3>
+                  <div>
+                    <p className="text-sm leading-6 text-muted-foreground">{lab.description}</p>
+                    <Link
+                      className="mt-3 inline-block border-b border-border pb-1 text-sm transition-colors hover:border-foreground"
+                      href={lab.href}
+                    >
+                      Open lab
+                    </Link>
+                  </div>
                 </div>
               ))}
             </div>

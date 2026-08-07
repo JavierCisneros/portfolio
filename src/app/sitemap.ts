@@ -16,5 +16,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),
+    {
+      url: `${baseUrl}/labs/jca-range`,
+      lastModified: "2026-08-06",
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
   ];
 }
