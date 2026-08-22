@@ -49,7 +49,7 @@ export default function Home() {
             </div>
           </div>
           <p className="max-w-64 text-sm leading-6 text-muted-foreground md:text-right">
-            Based in Guadalajara, Mexico. I've worked remotely with clients, vendors, and engineering teams across North America.
+            Based in Guadalajara, Mexico. I&apos;ve worked remotely with clients, vendors, and engineering teams across North America.
           </p>
         </section>
 
@@ -98,7 +98,7 @@ export default function Home() {
           <div className="grid gap-12 md:grid-cols-[1fr_2fr]">
             <div>
               <h2 className="text-lg font-semibold text-accent">Other work</h2>
-              <p className="mt-5 max-w-xs leading-7 text-muted-foreground">Smaller systems and tools I've built or maintained.</p>
+              <p className="mt-5 max-w-xs leading-7 text-muted-foreground">Smaller systems and tools I&apos;ve built or maintained.</p>
             </div>
             <div className="divide-y divide-border">
               {supportingWork.map(([title, description]) => (

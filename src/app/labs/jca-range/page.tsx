@@ -85,7 +85,7 @@ export default function JcaRangeLabPage() {
                 <h3 className="font-semibold">Predictable ranges</h3>
                 <p className="text-sm leading-7 text-muted-foreground">
                   Range transitions follow a small tested state machine instead
-                  of depending on the calendar library's default behavior.
+                  of depending on the calendar library&apos;s default behavior.
                 </p>
               </div>
               <div className="grid gap-3 py-6 sm:grid-cols-[12rem_1fr]">
