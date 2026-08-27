@@ -10,11 +10,11 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "Javier Cisneros | Full-Stack Software Engineer",
+    default: "Javier Cisneros | Software Engineer",
     template: "%s | Javier Cisneros",
   },
   description:
-    "Full-Stack Software Engineer building cloud-native applications, secure platform integrations, and production systems with React, TypeScript, Node.js, and AWS.",
+    "Software Engineer building cloud-native applications, secure platform integrations, and production systems with React, TypeScript, Node.js, and AWS.",
   keywords: [
     "software engineer",
     "full-stack developer",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.webmanifest",
   openGraph: {
-    title: "Javier Cisneros | Full-Stack Software Engineer",
+    title: "Javier Cisneros | Software Engineer",
     description:
       "Cloud-native applications, secure integrations, and end-to-end production ownership with React, TypeScript, Node.js, and AWS.",
     url: "https://www.javiercisneros.me",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Javier Cisneros, Full-Stack Software Engineer",
+        alt: "Javier Cisneros, Software Engineer",
       },
     ],
     locale: "en_US",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Javier Cisneros | Full-Stack Software Engineer",
+    title: "Javier Cisneros | Software Engineer",
     description:
       "Cloud-native applications, secure integrations, and end-to-end production ownership with React, TypeScript, Node.js, and AWS.",
     images: ["/opengraph-image"],
@@ -110,9 +110,9 @@ export default function RootLayout({
                   "@id": "https://www.javiercisneros.me/#person",
                   name: "Francisco Javier Cisneros Avila",
                   alternateName: "Javier Cisneros",
-                  jobTitle: "Full-Stack Software Engineer",
+                  jobTitle: "Software Engineer",
                   description:
-                    "Full-Stack Software Engineer focused on cloud-native applications, AWS architecture, and complex platform integrations.",
+                    "Software Engineer focused on cloud-native applications, AWS architecture, and complex platform integrations.",
                   url: "https://www.javiercisneros.me",
                   email: "mailto:hi@javiercisneros.me",
                   mainEntityOfPage: {

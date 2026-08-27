@@ -1,6 +1,6 @@
 # Javier Cisneros — Portfolio
 
-The source for [javiercisneros.me](https://javiercisneros.me), my portfolio as a full-stack software engineer working across cloud-native applications, secure platform integrations, and production operations.
+The source for [javiercisneros.me](https://javiercisneros.me), my portfolio as a software engineer working across cloud-native applications, secure platform integrations, and production operations.
 
 The site focuses on the engineering decisions and outcomes behind my commercial work. Most production source code belongs to private organization repositories, so the case studies explain the architecture, constraints, and ownership without exposing client code or confidential details.
 
