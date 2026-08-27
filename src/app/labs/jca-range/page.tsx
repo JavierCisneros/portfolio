@@ -70,7 +70,7 @@ export default function JcaRangeLabPage() {
             </a>
             <a
               className="border-b border-foreground pb-1 font-semibold transition-opacity hover:opacity-60"
-              href="https://jca-range-calendar.vercel.app/playground"
+              href="https://range.javiercisneros.me/playground"
               rel="noopener noreferrer"
               target="_blank"
             >
