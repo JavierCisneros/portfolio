@@ -37,9 +37,9 @@ export default function Home() {
 
         <section id="top" className="grid min-h-[78vh] content-center gap-10 border-b border-border py-20 md:grid-cols-[1fr_auto] md:items-end">
           <div>
-            <h1 className="max-w-4xl text-5xl font-semibold tracking-[-0.05em] sm:text-6xl md:text-7xl">Full-Stack Software Engineer</h1>
+            <h1 className="max-w-4xl text-5xl font-semibold tracking-[-0.05em] sm:text-6xl md:text-7xl">Software Engineer</h1>
             <p className="mt-8 max-w-2xl text-lg leading-8 text-muted-foreground md:text-xl">
-              I build web applications, from the first technical discussion through production.
+              I build web applications.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-4 text-sm font-semibold">
               <a className="border-b border-foreground pb-1 transition-opacity hover:opacity-60" href="mailto:hi@javiercisneros.me">Start a conversation</a>
