@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Javier Cisneros, Full-Stack Software Engineer";
+export const alt = "Javier Cisneros, Software Engineer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -26,7 +26,7 @@ export default function OpenGraphImage() {
         </div>
         <div style={{ display: "flex", flexDirection: "column", maxWidth: 980 }}>
           <div style={{ fontSize: 78, fontWeight: 700, letterSpacing: "-3px", lineHeight: 1.04 }}>
-            Full-Stack Software Engineer
+            Software Engineer
           </div>
           <div style={{ marginTop: 34, fontSize: 30, lineHeight: 1.4, color: "#a3a3a3" }}>
             Cloud applications, secure integrations, and end-to-end production ownership.
